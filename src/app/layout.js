@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { AuthProvider } from 'src/components/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <h1 className="mb-12 text-5xl font-bold sm:text-6xl">
+              Next.js with <span className="font-black text-green-400">Supabase</span>
+      </h1>
+      <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   )
 }
