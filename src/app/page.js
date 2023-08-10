@@ -1,6 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/herosection';
+import Link from 'next/link';   
+import { useEffect } from 'react';
 
 import Auth from 'src/components/Auth';
 import { useAuth, VIEWS } from 'src/components/AuthProvider';
@@ -15,10 +18,20 @@ export default function Home() {
   if (view === VIEWS.UPDATE_PASSWORD) {
     return <Auth view={view} />;
   }
-
+  if(!user){
+    return (
+      <><HeroSection/>
+      </>
+    )
+  }
+  
   if (user) {
     return (
-      <div className="card">
+      // <div>
+      <>
+        
+        <HeroSection />
+              {/* <div className="card">
         <h2>Welcome!</h2>
         <code className="highlight">{user.role}</code>
         <Link className="button" href="/profile">
@@ -28,6 +41,8 @@ export default function Home() {
           Sign Out
         </button>
       </div>
+      </div> */}
+      </>
     );
   }
 
