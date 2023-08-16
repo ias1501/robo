@@ -15,11 +15,12 @@ const page = async () => {
     redirect('/');
   }
   return (
-    <div><SignIn/>
+    <div>
+      <SignIn/>
     
-    <Link className="button" href="/profile">
+    {/* <Link className="button" href="/profile">
           Go to Profile
-        </Link>
+        </Link> */}
     </div>
   )
 }

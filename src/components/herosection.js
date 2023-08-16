@@ -41,7 +41,7 @@ export default function Herosection() {
 
 				</div>
 
-				<Link href="../pages/signin">
+				<Link href="../dashboard">
 			<button className=" relative px-7 py-4 bg-black rounded-lg leading-none flex items-center space-x-5">
 				<span className="text-gray-100 text-5xl group-hover:text-blue-500 transition duration-200">Let's start 🚀</span>
 
@@ -54,8 +54,8 @@ export default function Herosection() {
 			</div> */}
             
 		</div>
-		<div className="bg-sea2 min-h-screen bg-no-repeat bg-center bg-fixed bg-cover">
-
+		<div className="bg-sea3 min-h-screen bg-no-repeat bg-center bg-fixed bg-cover">
+		
 		</div>
 		</>
 	);
