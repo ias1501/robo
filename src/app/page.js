@@ -27,7 +27,7 @@ export default function Home() {
   
   if (user) {
     return (
-      // <div>
+      <div>
       <>
         
         <HeroSection />
@@ -42,7 +42,10 @@ export default function Home() {
         </button>
       </div>
       </div> */}
+
+      
       </>
+      </div>
     );
   }
 

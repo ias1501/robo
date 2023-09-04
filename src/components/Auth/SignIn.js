@@ -89,50 +89,67 @@ const SignIn = () => {
         onSubmit={signIn}
       >
         {({ errors, touched }) => (
-          <Form className="column w-full">
-
-            <label htmlFor="email">Email</label>
-            
+          <Form className="w-full p-4">
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2 rounded">
+              Email
+            </label>
             <Field
-              className={cn('input', errors.email && touched.email && 'bg-red-50')}
+              className={cn(
+                'input border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline',
+                errors.email && touched.email && 'bg-red-50'
+              )}
               id="email"
               name="email"
               placeholder="jane@acme.com"
               type="email"
-              
             />
             {errors.email && touched.email ? (
-              <div className="text-red-600">{errors.email}</div>
+              <div className="text-red-600 text-xs">{errors.email}</div>
             ) : null}
-
-            <label htmlFor="email">Password</label>
+          </div>
+        
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2 rounded">
+              Password
+            </label>
             <Field
-              className={cn('input', errors.password && touched.password && 'bg-red-50')}
+              className={cn(
+                'input border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline',
+                errors.password && touched.password && 'bg-red-50'
+              )}
               id="password"
               name="password"
               type="password"
             />
             {errors.password && touched.password ? (
-              <div className="text-red-600">{errors.password}</div>
+              <div className="text-red-600 text-xs">{errors.password}</div>
             ) : null}
- <div className="flex justify-between w-64 mb-5">
-            <label className="flex items-center text-xs"><input type="checkbox" name="Remember" className="mr-1"></input>
-             Remember me
-            </label>
-
           </div>
-            <button
-              className="link w-full text-black"
-              type="button"
-              onClick={() => setView(VIEWS.FORGOTTEN_PASSWORD)}
-            >
-              Forgot your password?
-            </button>
-
-            <button className="border-2 border-black text-black rounded-full px-20 py-4 inline-block font-semibold hover:bg-blue-200 hover:text-black justify-center items-center mx-4" type="submit">
-              Submit
-            </button>
-          </Form>
+        
+          <div className="mb-6 flex items-center text-gray-700 text-sm">
+            <input type="checkbox" name="Remember" className="mr-2" />
+            <label htmlFor="Remember">Remember me</label>
+          </div>
+        
+          <button
+            className="link text-black text-sm block mb-4"
+            type="button"
+            onClick={() => setView(VIEWS.FORGOTTEN_PASSWORD) }
+            // href='/auth/resetpassword'
+          >
+            Forgot your password?
+          </button>
+        
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full w-full transition duration-300 ease-in-out"
+            type="submit"
+          >
+            Submit
+          </button>
+        </Form>
+        
+        
         )}
       </Formik>
               </div>

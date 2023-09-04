@@ -20,6 +20,10 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
+</head>
       <body>
         {/* <HeroSection /> */}
         <>
@@ -34,8 +38,12 @@ export default async function RootLayout({ children }) {
         </div> */}
           <main>
             <AuthProvider accessToken={accessToken}>
-              {/* <Navbar /> */}
-              {children}
+            <div className="flex flex-col min-h-screen">
+      <Navbar className="fixed top-0 left-0 w-full z-10" /> {/* Add fixed class */}
+      <div > {/* Adjust the top margin */}
+        {children}
+        </div>
+      </div>
               <Footer />
             </AuthProvider>
           </main>

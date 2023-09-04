@@ -1,120 +1,117 @@
-"use client"
- import Image from 'next/image';
- import Link from 'next/link';
- import { useState } from 'react';
- import logo from "../../public/assets/logo.jpg"
- import { useAuth } from "./AuthProvider";
-import SignOut from './SignOut';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import logo from "../../public/assets/logo.png";
+import { useAuth } from "./AuthProvider";
+import SignOut from "./SignOut";
 
- function NavBar() {
- 
-	
-	const [navbar, setNavbar] = useState(false);
-    const { initial, user, view, signOut } = useAuth();
+function NavBar() {
+  const [navbar, setNavbar] = useState(false);
+  const { initial, user, view, signOut } = useAuth();
 
-	return (
-	 <div>
-	   <nav className="w-full  fixed top-0 left-0 right-0 z-10 h-20 shadow-xl bg-transparent ">
-		 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-		   <div>
-			 <div className="flex items-center justify-between py-3 md:py-5 md:block">
-			   {/* LOGO */}
-			   <Link href="/">
-			                  <Image
-              src={logo}
-              alt="Logo"
-              width="50"
-              height="55"
-              className="cursor-pointer"
-              priority
-              />
-			   </Link>
-			   {/* HAMBURGER BUTTON FOR MOBILE */}
-			   <div className="md:hidden">
-				 <button
-				   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-				   onClick={() => setNavbar(!navbar)}
-				 >
-				   {navbar ? (
-					 <Image src="/close.svg" width={30} height={30} alt="logo" />
-				   ) : (
-					 <Image
-					   src="/hamburger-menu.svg"
-					   width={30}
-					   height={30}
-					   alt="logo"
-					   className="focus:border-none active:border-none"
-					 />
-				   )}
-				 </button>
-			   </div>
-			 </div>
-		   </div>
-		   <div>
-			 <div
-			   className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-				 navbar ? 'p-12 md:p-0 block' : 'hidden'
-			   }`}
-			 >
-			   <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-				   <Link href="/about" onClick={() => setNavbar(!navbar)}>
-					 AboutUs
-				   </Link>
-				 </li>
-				 
-				 
-				 <li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-				   <Link href="#contactus" onClick={() => setNavbar(!navbar)}>
-					 ContactUs
-				   </Link>
-				 </li>
-				 
-				 {user ? (
-					<>
-					<li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-				   <Link href="/profile" onClick={() => setNavbar(!navbar)}>
-					 Profile
-				   </Link>
-				   </li>
-					<li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-										<Link href="/dashboard" onClick={() => setNavbar(!navbar)}>
-											Dashboard
-										</Link>
-									</li>
-									<li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-											<Link href="/" onClick={() => setNavbar(!navbar)}>
-												<SignOut />
-											</Link>
-										</li></>
-				 ) : (
-					<li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-				   <Link href="/auth/signin" onClick={() => setNavbar(!navbar)}>
-					 SignIn
-				   </Link>
-				 </li>
+  return (
+    <div>
+      <nav className="fixed  left-0 right-0 top-0 z-10 h-20 w-full bg-transparent shadow-xl ">
+        <div className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl">
+          <div>
+            <div className="flex items-center justify-between py-3 md:block md:py-5">
+              {/* LOGO */}
+              <Link href="/">
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width="50"
+                  height="55"
+                  className="cursor-pointer"
+                  priority
+                />
+              </Link>
+              {/* HAMBURGER BUTTON FOR MOBILE */}
+              <div className="md:hidden">
+                <button
+                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {navbar ? (
+                    <Image src="/close.svg" width={30} height={30} alt="logo" />
+                  ) : (
+                    <Image
+                      src="/hamburger-menu.svg"
+                      width={30}
+                      height={30}
+                      alt="logo"
+                      className="focus:border-none active:border-none"
+                    />
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                navbar ? "block p-12 md:p-0" : "hidden"
+              }`}
+            >
+              <ul className="h-screen items-center justify-center md:flex md:h-auto ">
+                <li className="border-b-2 border-purple-900 py-2 pb-6 text-center text-xl text-black hover:bg-purple-900  md:border-b-0  md:px-6  md:hover:bg-transparent md:hover:text-purple-600">
+                  <Link href="/about" onClick={() => setNavbar(!navbar)}>
+                    AboutUs
+                  </Link>
+                </li>
 
-				 ) }
-				 
-			   </ul>
-			 </div>
-		   </div>
-		 </div>
-	   </nav>
-	 </div>
-   );
- }
- 
- export default NavBar;
+                <li className="border-b-2 border-purple-900 px-6 py-2 pb-6 text-center  text-xl text-black  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                  <Link href="/contactus" onClick={() => setNavbar(!navbar)}>
+                    ContactUs
+                  </Link>
+                </li>
+                <li className="border-b-2 border-purple-900 px-6 py-2 pb-6 text-center  text-xl text-black  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                  <Link href="/services" onClick={() => setNavbar(!navbar)}>
+                    Services
+                  </Link>
+                </li>
+                {user ? (
+                  <>
+                    <li className="border-b-2 border-purple-900 px-6 py-2 pb-6 text-center  text-xl text-black  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                      <Link href="/profile" onClick={() => setNavbar(!navbar)}>
+                        Profile
+                      </Link>
+                    </li>
+                    <li className="border-b-2 border-purple-900 px-6 py-2 pb-6 text-center  text-xl text-black  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                      <Link
+                        href="/dashboard"
+                        onClick={() => setNavbar(!navbar)}
+                      >
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li className="border-b-2 border-purple-900 px-6 py-2 pb-6 text-center  text-xl text-black  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                      <Link href="/" onClick={() => setNavbar(!navbar)}>
+                        <SignOut />
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li className="border-b-2 border-purple-900 px-6 py-2 pb-6 text-center  text-xl text-black  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                    <Link
+                      href="/auth/signin"
+                      onClick={() => setNavbar(!navbar)}
+                    >
+                      SignIn
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}
 
-
-
-
-
-
-
-
-
+export default NavBar;
 
 // "use client"
 // import Image from "next/image";
@@ -141,7 +138,7 @@ import SignOut from './SignOut';
 //               className="cursor-pointer"
 //               priority
 //               />
-              
+
 //                 <div >
 //                     <ul className="hidden sm-flex ">
 //                         <Link href="/about">
@@ -157,7 +154,7 @@ import SignOut from './SignOut';
 //                         <Link href="/services">
 //                             <li className="mx-10 uppercase hover:border-b text-xl">Services</li>
 //                         </Link>
-                        
+
 //                     </ul>
 //                      </div>
 //                      <div onClick={handleNav} className="md:hidden cursor-pointer pl-24">
