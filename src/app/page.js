@@ -1,6 +1,8 @@
 'use client';
 
 import Navbar from '@/components/Navbar';
+import Herosection from '@/components/herosection';
+// import Herosection from '@/components/herosection';
 import HeroSection from '@/components/herosection';
 import Link from 'next/link';   
 import { useEffect } from 'react';
@@ -20,7 +22,7 @@ export default function Home() {
   }
   if(!user){
     return (
-      <><HeroSection/>
+      <><Herosection />
       </>
     )
   }
