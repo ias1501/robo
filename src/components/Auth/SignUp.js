@@ -9,6 +9,7 @@ import { useAuth, VIEWS } from 'src/components/AuthProvider';
 import supabase from 'src/lib/supabase-browser';
 
 const SignUpSchema = Yup.object().shape({
+
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Required'),
 });
@@ -33,7 +34,7 @@ const SignUp = () => {
 
   return (
     <div className="card">
-      <h2 className="w-full text-center">Create Account</h2>
+      {/* <h2 className="w-full text-center">Create Account</h2> */}
       <Formik
         initialValues={{
           email: '',

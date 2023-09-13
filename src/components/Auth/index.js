@@ -20,7 +20,7 @@ const Auth = ({ view: initialView }) => {
     case VIEWS.FORGOTTEN_PASSWORD:
       return <ResetPassword />;
     case VIEWS.SIGN_UP:
-      return <SignUp />;
+      return <SignIn />;
     default:
       return <SignIn />;
   }

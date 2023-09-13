@@ -8,7 +8,16 @@ const Temp = () => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
       filtergetTempItems();
-  
+      const parameters = supabase.channel('custom-insert-channel')
+.on(
+  'postgres_changes',
+  { event: 'INSERT', schema: 'public', table: 'parameters' },
+  (payload) => {
+    console.log('Change received!', payload)
+    filtergetTempItems();
+  }
+)
+.subscribe()
      
     }, []);
     const filtergetTempItems = async () => {

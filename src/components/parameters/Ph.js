@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import supabase from '@/lib/supabase-browser';
 import Chart from 'chart.js/auto';
-
+import "./param.css";
 const ph = () => {
 
     const [RecopH, setRecopH] = useState([]);
@@ -9,6 +9,17 @@ const ph = () => {
 
   useEffect(() => {
     filtergetpHItems();
+
+    const parameters = supabase.channel('custom-insert-channel')
+.on(
+  'postgres_changes',
+  { event: 'INSERT', schema: 'public', table: 'parameters' },
+  (payload) => {
+    console.log('Change received!', payload)
+    filtergetpHItems();
+  }
+)
+.subscribe()
   }, []);
 
   const filtergetpHItems = async () => {
@@ -45,6 +56,7 @@ const ph = () => {
               label: 'pH',
               borderColor: '#3e95cd',
               backgroundColor: '#7bb6dd',
+              color:'#36A2EB',
               fill: false,
             },
           ],
@@ -60,19 +72,19 @@ const ph = () => {
   }, [RecopH]);
 
   return (
- <div className="container mx-auto p-4">
-    <div className="bg-white shadow-lg rounded-lg">
+ <div className="container mx-auto p-4 bg-dashboard">
+    <div className="container1">
     <div className="graph">
         <div className="my-8">
-          <div className="mx-auto max-w-screen-md">
-            <div className="shadow-xl rounded-xl border border-gray-400">
+          <div className="mx-auto max-w-screen-md ">
+            <div className="graph1 shadow-xl rounded-xl border border-gray-400">
               <canvas id="myChart" />
             </div>
           </div>
         </div>
       </div>
       <div className="p-4">
-        <table className="table-auto w-full">
+        <table className="table w-full">
           <thead>
             <tr>
               <th className="px-4 py-2">Created_at</th>

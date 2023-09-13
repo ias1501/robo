@@ -28,7 +28,7 @@ import React from 'react';
 import "./dashboard.css";
 import Sidebar from '@/components/sidebar';
 import { redirect } from 'next/navigation';
-import Linechart from '@/components/parameters/Linechart';
+// import Linechart from '@/components/parameters/Linechart';
 
 
 //     <div class="sidebar">
@@ -137,12 +137,36 @@ const Dashboard = async(params) => {
   return (
     <div className="flex-row lg:flex">
       <Sidebar />
-      <div className="container mx-auto mt-4 lg:mt-12 ">
-        <div className="p-4 mx-2 shadow-sm">
-          <p>Add Dashboard Analytics </p>
-          
-        </div>
-      </div>
+      <div className="container mx-auto mt-4 lg:mt-12">
+  <div className="p-4 mx-2 shadow-sm">
+    <h1 className="text-3xl font-semibold text-center mb-4 text-gray-800">
+    <h1 className="mb-6 text-3xl font-bold sm:text-5xl md:text-6xl">
+                Wander<span className="font-black text-blue-400">Sub</span>
+              </h1> Analytics
+    </h1>
+    <p className="text-gray-600 text-lg">
+      Here you can access all the analytics data of the ROV. In the sidebar,
+      you can navigate to specific sections.
+    </p>
+    <ul className="list-disc pl-6 mt-2 text-gray-600 text-lg">
+      <li>
+        <strong className="text-black">All Records:</strong> View real-time
+        records of sensor readings and battery values.
+      </li>
+      <li>
+        <strong className="text-black">Individual Parameters:</strong> Explore
+        specific parameters, including sensor value tables, graphs, and
+        suggestions.
+      </li>
+      <li>
+        <strong className="text-black">Mapping:</strong> Visualize the
+        accelerometer values of the WanderSub, along with a table of gyroscope
+        values.
+      </li>
+    </ul>
+  </div>
+</div>
+
     </div>
   );
 }

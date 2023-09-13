@@ -2,29 +2,40 @@ import React, { useEffect, useState } from 'react'
 import supabase from '@/lib/supabase-browser';
 import Chart from 'chart.js/auto';
 
-const rovStat = () => {
+const RovStats = () => {
 
-    const [RecopH, setRecopH] = useState([]);
+    const [RecoStat, setRecoState] = useState([]);
     const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    filtergetpHItems();
+    filtergetstatItems();
+
+    const parameters = supabase.channel('custom-insert-channel')
+.on(
+  'postgres_changes',
+  { event: 'INSERT', schema: 'public', table: 'parameters' },
+  (payload) => {
+    console.log('Change received!', payload)
+    filtergetstatItems();
+  }
+)
+.subscribe()
   }, []);
 
-  const filtergetpHItems = async () => {
+  const filtergetstatItems = async () => {
     try {
       setLoading(true);
-      const { data: RecopH } = await supabase
-        .from('parameters')
-        .select('created_at,ph ') // columns to select from the database
+      const { data: RecoStat } = await supabase
+        .from('positional_para')
+        .select('created_at,Acc_x,Acc_y,Acc_z,gyro_roll,gyro_pitch,gyro_yarn ') // columns to select from the database
         .order('created_at', { ascending: false }); // sort the data so the last item comes on top;
 
-      console.log(RecopH);
-      if (RecopH != null) {
-        setRecopH(RecopH); // [product1,product2,product3]
-        // { (RecopH>10) ?  <Horizontalchart/> : false }
+      // console.log(RecoStat.map((reco)=>{reco.gyro_roll}));
+      if (RecoStat != null) {
+        setRecoState(RecoStat); // [product1,product2,product3]
+        // { (RecoStat>10) ?  <Horizontalchart/> : false }
       }
-      // if (RecopH.map((Record)=>Record.ph>10)) {
+      // if (RecoStat.map((Record)=>Record.ph>10)) {
       //   <Horizontalchart/>
       // }
     } catch (error) {
@@ -32,71 +43,56 @@ const rovStat = () => {
     }
     setLoading(false);
   };
-  useEffect(() => {
-    if (RecopH.length > 0) {
-      const ctx = document.getElementById('myChart').getContext('2d');
-      const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: RecopH.map((record) => record.created_at),
-          datasets: [
-            {
-              data: RecopH.map((record) => record.ph),
-              label: 'pH',
-              borderColor: '#3e95cd',
-              backgroundColor: '#7bb6dd',
-              fill: false,
-            },
-          ],
-        },
-      });
-      return () => {
-        // Destroy the chart when the component unmounts
-        if (myChart) {
-          myChart.destroy();
-        }
-      };
-    }
-  }, [RecopH]);
+  
 
   return (
- <div className="container mx-auto p-4">
-    <div className="bg-white shadow-lg rounded-lg">
-    <div className="graph">
-        <div className="my-8">
-          <div className="mx-auto max-w-screen-md">
-            <div className="shadow-xl rounded-xl border border-gray-400">
-              <canvas id="myChart" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="p-4">
+
+<div className="container mx-auto p-4">
+
+
+
+
+
+    <div className="p-4">
         <table className="table-auto w-full">
           <thead>
             <tr>
               <th className="px-4 py-2">Created_at</th>
-              <th className="px-4 py-2">pH</th>
+              <th className="px-4 py-2" colSpan={3}>Accelerometer</th>
+              <th className="px-4 py-2" colSpan={3}>Gyroscope</th>
+            </tr>
+            <tr>
+            <th className="px-6 py-3"></th>
+
+            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acc_x</th>
+                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acc_y</th>
+                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acc_z</th>
+                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">gyro_roll</th>
+                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">gyro_pitch</th>
+                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">gyro_yarn</th>
+  
             </tr>
           </thead>
           <tbody>
-            {RecopH.map((Record) => (
+            {RecoStat.map((Record) => (
               <tr key={Record.created_at} className="odd:bg-gray-100">
                 <td className="px-4 py-2">{Record.created_at}</td>
-                <td className="px-4 py-2">{Record.ph}</td>
+                <td className="px-4 py-2">{Record.Acc_x}</td>
+                <td className="px-4 py-2">{Record.Acc_y}</td>
+                <td className="px-4 py-2">{Record.Acc_z}</td>
+                <td className="px-4 py-2">{Record.gyro_roll}</td>
+                <td className="px-4 py-2">{Record.gyro_pitch}</td>
+                <td className="px-4 py-2">{Record.gyro_yarn}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      
+</div>
 
-      
-
-    </div>
-  </div>
+  
    
   )
 }
 
-export default rovStat
+export default RovStats

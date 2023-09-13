@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import TeamMemberCard from '@/components/TeamMemberCard';
+import NavBar from '@/components/Navbar';
 // import NavBar from '@/';
-// import Footer from '@/components/components/Footer';
+
 
 const teamMembers = [
   { name: 'Isha Shah', role: 'CEO', imageSrc: 'assets/Isha.jpg' },
@@ -19,18 +20,20 @@ const About = () => {
 
   return (
     
-    <div className="flex flex-col min-h-screen  ">
-      {/* Navbar */}
-      {/* <nav className=" p-4">
+    <div className="flex flex-col min-h-screen bg-dashboard bg-cover bg-no repeat text-white">
+      
+      <nav className=" p-4">
        <NavBar/>
-      </nav> */}
+      </nav>
 
            {/* Our Story Section */}
-      <section className=" flex-grow flex items-center justify-center bg-pink-100" >
-        <div className="max-w-7xl mx-auto px-8 md:px-8 lg:px-16 xl:px-20 text-center">
-          <h2 className=" mt-10 text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
-          <p className="text-gray-700 md:text-lg">
-          We are a team of 5 Second Year College Students hailing from different Departments of Engineering pursuing our shared passion for Science and Technology from SVIT, Vasad.Our team is mentored by the knowledgeable and experienced group of 5 members that are alumnus of SVIT, Vasad. They have been the  guiding light for our mission of making this project come to life.
+      <section className="text-white-700 flex-grow flex items-center justify-center" >
+        <div className=" text-white-100 max-w-7xl mx-auto px-8 md:px-8 lg:px-16 xl:px-20 text-center">
+          <h2 className="text-white mt-10 text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
+          <p className="text-white-100 md:text-lg">
+          We are a dynamic team of five dedicated students hailing from diverse branches of engineering – Mechanical Engineering, Computer Engineering, and Information Technology. Currently in our third year of undergraduate studies at SVIT, our collective passion and drive are focused on reshaping the way humanity explores the underwater realm.
+          Our journey has been guided by the invaluable expertise of our college alumnus, Arpit Shah, and his accomplished team. Their mentorship and support have played a pivotal role in propelling our remotely operated vehicle (ROV) towards unprecedented success.
+          With a shared vision and relentless determination, we are committed to pushing the boundaries of what is possible beneath the waves. Together, we are not just students; we are innovators on a mission to revolutionize underwater exploration.
 
             {/* Add more content here */}
           </p>
@@ -39,7 +42,7 @@ const About = () => {
 
       {/* Team Member Cards */}
       <section className=" flex-grow py-16 ">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 flex justify-center items-center">Meet Our Team</h2>
+      <h2 className="text-white text-3xl md:text-4xl font-bold mb-8 flex justify-center items-center">Meet Our Team</h2>
       <p className="text-2xl md:text-4xl font-semibold mb-8 flex justify-center items-center">The members who worked hard to bring this project to life.</p>
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 xl:px-20 ">
           

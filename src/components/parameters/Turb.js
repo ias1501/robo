@@ -10,6 +10,16 @@ const turb = () => {
 
   useEffect(() => {
     filtergetturbItems();
+    const parameters = supabase.channel('custom-insert-channel')
+.on(
+  'postgres_changes',
+  { event: 'INSERT', schema: 'public', table: 'parameters' },
+  (payload) => {
+    console.log('Change received!', payload)
+    filtergetturbItems();
+  }
+)
+.subscribe()
   }, []);
 
   const filtergetturbItems = async () => {

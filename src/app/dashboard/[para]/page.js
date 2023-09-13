@@ -2,12 +2,15 @@
 import { useParams, useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
-import Ph from '@/components/parameters/Ph'
-import Temp from '@/components/parameters/Temp'
-import Turb from '@/components/parameters/Turb'
-import Alreco from '@/components/parameters/Alreco'
-import Tds from '@/components/parameters/Tds'
+import Ph from '@/components/parameters/Ph';
+import Temp from '@/components/parameters/Temp';
+import Turb from '@/components/parameters/Turb';
+import Alreco from '@/components/parameters/Alreco';
+import Rovstats from '@/components/parameters/Rovstats';
+import Tds from '@/components/parameters/Tds';
 import Sidebar from '@/components/sidebar';
+import Reletpos from '@/components/parameters/Reletpos';
+
 
 // const tabs = ["ph","tds"];
 const page = ({ params }) => {
@@ -24,6 +27,10 @@ const page = ({ params }) => {
     content=<Turb /> ;
   }else if (params.para === 'alreco') {
     content=<Alreco /> ;
+  }else if (params.para === 'rovstat') {
+    content=<Rovstats /> ;
+  }else if (params.para === 'reletpos') {
+    content=<Reletpos /> ;
   } 
   // const [activeTab, setActiveTab] = useState(tabs[0]);
   

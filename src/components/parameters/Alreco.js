@@ -8,6 +8,19 @@ const Alreco = () => {
 
   useEffect(() => {
     handlegetItems();
+
+
+    
+const parameters = supabase.channel('custom-insert-channel')
+.on(
+  'postgres_changes',
+  { event: 'INSERT', schema: 'public', table: 'parameters' },
+  (payload) => {
+    console.log('Change received!', payload)
+    handlegetItems();
+  }
+)
+.subscribe()
   }, []);
 
   const handlegetItems = async () => {
@@ -89,7 +102,7 @@ const Alreco = () => {
       
       <div className="bg-white shadow-lg rounded-lg">
         <div className="p-4">
-          <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 table-auto">
+          <table className="w-full text-left text-sm text-gray-500  table-auto">
             <thead>
               <tr>
                 <th scope="col" className="py-3 md:px-6">
@@ -114,10 +127,10 @@ const Alreco = () => {
             </thead>
             <tbody>
               {Records.map((Record) => (
-                <tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-900">
+                <tr className="border-b bg-white  ">
                   <th
                     scope="row"
-                    className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                    className=" px-6 py-4 font-medium  "
                   >
                     {Record.created_at}
                   </th>
