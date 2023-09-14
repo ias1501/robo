@@ -83,11 +83,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-      <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-      <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-      <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-      <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+      
       <div className="container" id="container">
         <div className="form-container sign-up-container">
         <SignUp />

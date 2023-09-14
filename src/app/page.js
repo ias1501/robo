@@ -1,16 +1,16 @@
 'use client';
 
 import Navbar from '@/components/Navbar';
-import Herosection from '@/components/herosection';
-import Hero2 from '@/components/hero2';
-// import Herosection from '@/components/herosection';
 import HeroSection from '@/components/herosection';
+
+// import Herosection from '@/components/herosection';
+// import HeroSection from '@/components/herosection';
 import Link from 'next/link';   
 import { useEffect } from 'react';
 
 import Auth from 'src/components/Auth';
 import { useAuth, VIEWS } from 'src/components/AuthProvider';
-import Hero3 from '@/components/Hero3';
+
 
 export default function Home() {
   const { initial, user, view, signOut } = useAuth();
@@ -33,7 +33,7 @@ export default function Home() {
   if (user) {
     return (
       <div>
-      <>
+    
         
         <HeroSection />
               {/* <div className="card">
@@ -49,7 +49,7 @@ export default function Home() {
       </div> */}
 
       
-      </>
+        
       </div>
     );
   }

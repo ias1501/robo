@@ -1,0 +1,56 @@
+.mission{
+    width: 265px;
+height: 72px;
+top: 784px;
+left: 112px;
+font-family: Montserrat;
+font-size: 59px;
+font-weight: 700;
+line-height: 72px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.para{
+    width: 1215px;
+height: 204px;
+top: 877px;
+left: 112px;
+font-family: Montserrat;
+font-size: 28px;
+font-weight: 700;
+line-height: 34px;
+letter-spacing: 0em;
+text-align: left;
+color: black;
+
+}
+
+.vision{
+    width: 330px;
+    height: 72px;
+    top: 1176px;
+    left: 997px;
+    font-family: Montserrat;
+font-size: 59px;
+font-weight: 700;
+line-height: 72px;
+letter-spacing: 0em;
+text-align: left;
+  
+}
+
+.para2{
+    width: 1215px;
+height: 204px;
+top: 1277px;
+left: 112px;
+font-family: Montserrat;
+font-size: 28px;
+font-weight: 700;
+line-height: 34px;
+letter-spacing: 0em;
+text-align: right;
+color: black;
+    
+}
