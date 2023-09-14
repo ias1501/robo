@@ -1,6 +1,6 @@
 "use client";
 import Head from "next/head";
-// import HeroSection from "src/components/HeroSection";
+import HeroSection from "src/components/HeroSection";
 // import Navbar from "src/components/components/Navbar";
 import React, { useEffect } from "react";
 import { useState } from "react";

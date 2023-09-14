@@ -1,9 +1,12 @@
 'use client';
 
 import Navbar from '@/components/Navbar';
+<<<<<<< HEAD
 import Herosection from '@/components/herosection';
 import Hero2 from '@/components/hero2';
 // import Herosection from '@/components/herosection';
+=======
+>>>>>>> parent of 32cba7e (test)
 import HeroSection from '@/components/herosection';
 import Link from 'next/link';   
 import { useEffect } from 'react';
@@ -24,9 +27,14 @@ export default function Home() {
   }
   if(!user){
     return (
+<<<<<<< HEAD
       // <><Herosection />
       // </>
       <><Hero2 /></>
+=======
+      <><HeroSection/>
+      </>
+>>>>>>> parent of 32cba7e (test)
     )
   }
   
