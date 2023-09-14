@@ -76,13 +76,13 @@ const SignUp = () => {
       </Formik>
       {errorMsg && <div className="text-red-600">{errorMsg}</div>}
       {successMsg && <div className="text-black">{successMsg}</div>}
-      <button
+      {/* <button
         className="link w-full"
         type="button"
         onClick={() => setView(VIEWS.SIGN_IN)}
       >
         Already have an account? Sign In.
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -135,7 +135,7 @@ const Dashboard = async(params) => {
   //   <Ph />
   // }
   return (
-    <div className="flex-row lg:flex">
+    <div className="flex-row lg:flex bg-dashboard bg-cover bg-no repeat">
       <Sidebar />
       <div className="container mx-auto mt-4 lg:mt-12">
   <div className="p-4 mx-2 shadow-sm">

@@ -12,7 +12,7 @@ const Sidebar = () => {
     <div
         className={` ${
           open ? "lg:w-40" : "lg:w-60 "
-        } flex flex-col lg:h-screen p-3 w-full bg-gray-800 shadow duration-300 bg-sea1`}
+        } flex flex-col lg:h-screen p-3 w-full bg-gray-800 shadow duration-300`}
       >
         <div className="space-y-3">
           <div className="flex items-center justify-between">

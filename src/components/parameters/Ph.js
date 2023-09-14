@@ -56,10 +56,31 @@ const ph = () => {
               label: 'pH',
               borderColor: '#3e95cd',
               backgroundColor: '#7bb6dd',
-              color:'#36A2EB',
+              // color:'#055',
               fill: false,
             },
           ],
+        },
+        options: {
+          scales: {
+            x: {
+              ticks: {
+                color: '#01051e', // Change the x-axis label text color to black
+              },
+            },
+            y: {
+              ticks: {
+                color: '#01051e', // Change the y-axis label text color to black
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: 'black', // Change the legend label text color to black
+              },
+            },
+          },
         },
       });
       return () => {
@@ -72,7 +93,7 @@ const ph = () => {
   }, [RecopH]);
 
   return (
- <div className="container mx-auto p-4 bg-dashboard">
+ <div className="container mx-auto p-4 bg-dashboard bg-cover bg-no repeat">
     <div className="container1">
     <div className="graph">
         <div className="my-8">
@@ -84,26 +105,30 @@ const ph = () => {
         </div>
       </div>
       <div className="p-4">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">Created_at</th>
-              <th className="px-4 py-2">pH</th>
-            </tr>
-          </thead>
-          <tbody>
-            {RecopH.map((Record) => (
-              <tr key={Record.created_at} className="odd:bg-gray-100">
-                <td className="px-4 py-2">{Record.created_at}</td>
-                <td className="px-4 py-2">{Record.ph}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+  <table className="table w-full bg-opacity-50 backdrop-blur-md">
+    <thead className="bg-gray-800 bg-opacity-30">
+      <tr>
+        <th className="px-4 py-2 text-gray-100">Created_at</th>
+        <th className="px-4 py-2 text-gray-100">pH</th>
+      </tr>
+    </thead>
+    <tbody>
+      {RecopH.map((Record, index) => (
+        <tr
+          key={Record.created_at}
+          className={index % 2 === 0 ? ' odd:bg-opacity-50' : 'odd:bg-gray-100'}
+        >
+          <td className="px-4 py-2">{Record.created_at}</td>
+          <td className="px-4 py-2">{Record.ph}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
       <h2 className="mt-4 text-3xl">Records having greater than 8.5 pH</h2>
 
-      <div className="align-items-right container  mt-4">
+      <div className="align-items-right   mt-4">
             <div className="card shadow-0 border">
               <div className="card-body p-4">
                 <h3 className="sfw-normal mb-1">pH range</h3>

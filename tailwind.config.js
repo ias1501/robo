@@ -45,17 +45,11 @@ module.exports = {
         "color-white": "#fff",
         "color-blob": "#A427DF",
       }
-    },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '20px',
-        md: "50px"
-      }
     }
+
   },
   plugins: [rotateY],
-};
+}
 // const forms = require('@tailwindcss/forms');
 
 // module.exports = {

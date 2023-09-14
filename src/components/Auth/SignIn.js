@@ -23,29 +23,12 @@ const SignInSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string().required("Required"),
 });
-const SignUpSchema = Yup.object().shape({
 
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().required('Required'),
-});
 const SignIn = () => {
   const { setView } = useAuth();
   const [errorMsg, setErrorMsg] = useState(null);
-  const [errorMsg1, setErrorMsg1] = useState(null);
-  const [successMsg, setSuccessMsg] = useState(null);
-
-  async function signUp(formData) {
-    const { error } = await supabase.auth.signUp({
-      email: formData.email,
-      password: formData.password,
-    });
-
-    if (error) {
-      setErrorMsg1(error.message);
-    } else {
-      setSuccessMsg('Success! Please check your email for further instructions.');
-    }
-  }
+  
+ 
   async function signIn(formData) {
     const { error } = await supabase.auth.signInWithPassword({
       email: formData.email,
@@ -66,7 +49,7 @@ const SignIn = () => {
     });
 
     signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
+      container.classList.remove("left-panel-active");
     });
 
     // Cleanup event listeners when the component unmounts
