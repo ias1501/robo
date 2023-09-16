@@ -44,10 +44,17 @@ export default async function RootLayout({ children }) {
           </main>
         </div> */}
           <main>
-          <AuthProvider accessToken={accessToken}>
-        {children}</AuthProvider>
-        </main>
-          
+            <AuthProvider accessToken={accessToken}>
+            <div className="flex flex-col min-h-screen">
+      <Navbar className="fixed top-0 left-0 w-full z-10" /> {/* Add fixed class */}
+      {/* <Navbar className="fixed top-0 left-0 w-full z-10" />  */}
+      <div > {/* Adjust the top margin */}
+        {children}
+        </div>
+      </div>
+              <Footer />
+            </AuthProvider>
+          </main>
           
         </>
       </body>

@@ -1,92 +1,78 @@
-import React from "react";
-import {FaInstagram} from "react-icons/fa";
-import {FaTwitter} from "react-icons/fa";
-import {FaLinkedinIn} from "react-icons/fa";
-import {FaYoutube} from "react-icons/fa";
 
-export default function Footer(){
-    return(
+import React from 'react';
+import { FaFacebook, FaDiscord, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa';
+import "./footer.css"
+const Footer = () => {
+  const socialMediaLinks = [
+    { icon: <FaFacebook />, url: '#' },
+    { icon: <FaDiscord />, url: '#' },
+    { icon: <FaTwitter />, url: '#' },
+    { icon: <FaGithub />, url: '#' },
+    { icon: <FaDribbble />, url: '#' }
+  ];
+
+  return (
+    <footer className="bg-white">
+       <div className="water-ripple">
       
-    <div className="bg-white h-5 w-full flex md:flex-row flex-col justify-around itens-start p-20" >
-        <div className="p-5">
-        
-          <ul>
-          <div className="flex gap-6 pb-5 items-top  shadow-xl bg-transparent">
-                {/* Section for icons */}
-                <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600"/>
-                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600"/>
-                <FaLinkedinIn className="text-2xl cursor-pointer hover:text-blue-600"/>
-                <FaYoutube className="text-2xl cursor-pointer hover:text-red-600"/>
-            </div>
-            <p className="text-gray-800  font-bold text-3xl pb-1">
-                Wander <span className="text-blue-600">Sub</span>
-            </p>
-          
-          </ul>
-        </div>
-        <div className="flex felx-col justify-center items-center text-center p-5 bg-gray-50">
-          
-            <h1 className="text-gray-800 font-semibold">Copyright © 2023 WanderWater | All Rights Reserved </h1>
-           
+       </div>
+      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div className="md:flex md:justify-between">
+          <div className="mb-6 md:mb-0">
+            <a href="/" className="flex items-center text-black text-2xl font-semibold">
+              <img src="../../public/logo.png" className="h-8 mr-3" alt="" />
+              Wander<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-400">Sub</span>
+            </a>
+          </div>
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
             
-          
+              <ul className="text-gray-500 dark:text-gray-800 font-medium">
+                <li className="mb-4">
+                  <a href="/aboutus" className="hover:underline">Team</a>
+                </li>
+                <li>
+                  <a href="/" className="hover:underline">Services</a>
+                </li>
+               
+              </ul>
+            </div>
+            <div>
+              
+              <ul className="text-gray-500 dark:text-gray-800 font-medium">
+                <li className="mb-4">
+                  <a href="/" className="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="/" className="hover:underline">Terms and Services</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              {/* Add content for the second column */}
+            </div>
+            <div>
+              {/* Add content for the third column */}
+            </div>
+          </div>
         </div>
-        {/* <div className="p-5">
-          <ul>
-            <p className="text-gray-800 font-bold text-2xl pb-4">Company</p>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">Aboutus</li>
-          </ul>
-
-        </div> */}
-
-    </div>
-    
-    )
-  
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-800">
+            © 2023 <a href="/" className="hover:underline">WanderSub™</a>. All Rights Reserved.
+          </span>
+          <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+            {socialMediaLinks.map((linkItem, index) => (
+              <a key={index} href={linkItem.url} className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                {linkItem.icon}
+                <span className="sr-only">Social Media</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-
-
-
-
-// import React from "react";
-// import {FaInstagram} from "react-icons/fa";
-// import {FaTwitter} from "react-icons/fa";
-// import {FaLinkedinIn} from "react-icons/fa";
-// import {FaYoutube} from "react-icons/fa";
-
-// export default function Footer(){
-//     return <div className="bg-pink-50 h-1/2 w-full flex md:flex-row flex-col justify-around itens-start p-20" >
-//         <div className="p-5">
-//           <ul>
-//             <p className="text-gray-800 font-bold text-3xl pb-6">
-//                 Wander <span className="text-blue-600">Sub</span>
-//             </p>
-//             <div className="flex gap-6 pb-5">
-//                 {/* Section for icons */}
-//                 <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600"/>
-//                 <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600"/>
-//                 <FaLinkedinIn className="text-2xl cursor-pointer hover:text-blue-600"/>
-//                 <FaYoutube className="text-2xl cursor-pointer hover:text-red-600"/>
-//             </div>
-//           </ul>
-//         </div>
-//         <div className="p-5">
-//           <ul>
-//             <p className="text-gray-800 font-bold text-2xl pb-4">Product</p>
-//             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">WanderFloat</li>
-//             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">WanderWater</li>
-//             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">WanderSub</li>
-            
-//           </ul>
-//         </div>
-//         <div className="p-5">
-//           <ul>
-//             <p className="text-gray-800 font-bold text-2xl pb-4">Company</p>
-//             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">Aboutus</li>
-//           </ul>
-
-//         </div>
-
-//     </div>;
-// }
+export default Footer;

@@ -322,16 +322,15 @@
 // }
 
 // export default Hero2;
-
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './hero.css';
 import NavBar from '@/components/Navbar';
-import logo from '../../public/logo.png';
+
 import Image from 'next/image';
-// import Footer from '@/components/components/Footer';
+import Footer from '@/components/Footer';
 import { FaFacebook, FaDiscord, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa';
 import ImageDescription from '@/components/productcomponent1';
 
@@ -393,7 +392,7 @@ const Hero3 = () => {
     { imageSrc: "https://media.istockphoto.com/id/1499815056/photo/a-tourist-submarine-has-gone-missing-in-the-north-atlantic-mini-manned-submarine-to-explore.webp?b=1&s=170667a&w=0&k=20&c=aOFE0Ib9CQFwbmg47D3nwbfgnxwY3nHqvHl7wrH0NPE=", description: 'Description for Image 3 goes here.' },
     { imageSrc: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZWdyYXRlZCUyMGNvbnRyb2wlMjBzb2Z0d2FyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60", description: 'Description for Image 3 goes here.' },
     { imageSrc: "https://images.unsplash.com/photo-1439405326854-014607f694d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2ZSUyMHZlZGlvJTIwc3RyZWFtaW5nJTIwb2YlMjB3YXRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60", description: 'Description for Image 3 goes here.' },
-    { imageSrc: "../../public/dm.png", description: 'Description for Image 3 goes here.' },
+    { imageSrc: "/dl.jpg", description: 'Description for Image 3 goes here.' },
     // Add more image data as needed
   ];
   const missionRef = useRef(null);
@@ -515,7 +514,8 @@ const Hero3 = () => {
       >
         <h2 className="text-2xl font-bold">Mission</h2>
         <p className="mission-section">
-            <span>Your</span> <span>mission</span> <span>statement</span> <span>goes</span> <span>here.</span>
+        "To unlock the mysteries of the world beneath the waves and empower humanity to explore, understand, 
+        and protect our planet's underwater realms through cutting-edge ROV technology."
             {/* Add more words as needed */}
           </p>
       </div>
@@ -524,49 +524,111 @@ const Hero3 = () => {
         className={`text-gray-600 pr-10 p-4 md:text-right  ${fadeIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[1rem]'} transition-opacity transform ease-in-out duration-500`}
         style={{ width: '100%', maxWidth: '100%', transition: 'width 0.5s ease-in-out' }}
       >
-        <h2 className="text-2xl font-bold">Vision</h2>
-        <p className="vision-section">
-            <span>Your</span> <span>vision</span> <span>statement</span> <span>goes</span> <span>here.</span>
-            {/* Add more words as needed */}
-          </p>
+        <h2 className="flex text-2xl font-bold justify-center">Our Vision</h2>
+        <div className="grid grid-cols-5 gap-4 justify-center">
+  {/* Card 1 */}
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Innovative ROV Solutions: </div>
+    <div className="text-xs leading-tight">Develop state-of-the-art remotely operated vehicles (ROVs) equipped with advanced sensors and communication systems to enable safe and efficient exploration of underwater environments.</div>
+  </div>
+
+  {/* Repeat the structure for the remaining cards */}
+  
+  {/* Card 2 */}
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Environmental Conservation:</div>
+    <div className="text-xs leading-tight"> Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  </div>
+
+  {/* Card 3 */}
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Education and Outreach: .</div>
+    <div className="text-xs leading-tight">Foster a deeper connection between people and the underwater world by providing educational resources and engaging the public in underwater exploration.</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Industry Collaboration:</div>
+    <div className="text-xs leading-tight">Collaborate with industries such as marine biology, offshore energy, and underwater archaeology to provide ROV solutions that meet their specific needs.</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Safety and Efficiency:</div>
+    <div className="text-xs leading-tight">Prioritize the safety of our equipment and operators while maximizing the efficiency of underwater missions.</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Global Impact: </div>
+    <div className="text-xs leading-tight">Extend our reach to contribute to international efforts to preserve and protect the world's oceans and freshwater bodies.</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Inclusive Exploration: </div>
+    <div className="text-xs leading-tight">Promote diversity and inclusion in the field of underwater exploration, ensuring that all voices and perspectives are heard..</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Continuous Innovation:</div>
+    <div className="text-xs leading-tight">Stay at the forefront of ROV technology through ongoing research and development, adapting to emerging challenges and opportunities in underwater exploration.</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Economic Growth:</div>
+    <div className="text-xs leading-tight">Drive economic growth by providing ROV services and solutions that benefit industries and research organizations worldwide.</div>
+  </div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Customer Satisfaction: </div>
+    <div className="text-xs leading-tight">Deliver exceptional value and service to our customers, exceeding their expectations in every aspect of our work.</div>
+  </div>
+
+  {/* Continue with the remaining cards */}
+</div>
+
+
+
       </div>
-   
-    
+   <h1 className=' features flex text-black font-bold font-5xl justify-center items-center mt-6 '> Features</h1>
+    <p className='features text-black flex justify-center items-center'>
+    Introducing our cutting-edge underwater Remotely Operated Vehicle (ROV), designed for unparalleled exploration beneath the waves:
+    </p>
 
     <ProductComponent imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+        title="High-Definition Live Imaging:"
+        description="Experience the depths like never before with a live HD camera and advanced lighting system, providing crystal-clear visuals for wired communication. Immerse yourself in the underwater world in real-time."/>
     <ProductComponent1 imageSrc="/i1.png"
-        title="Blue Dress v2"
+        title="Precision Control with 5 Degrees of Freedom:"
+        description="Our ROV boasts 5 Degrees of Freedom (5-DoF) through a vectored thruster configuration, allowing precise maneuverability in every direction. Explore underwater environments with ease and agility."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Powerful Propulsion:"
+        description=" Our ROV boasts 5 Degrees of Freedom (5-DoF) through a vectored thruster configuration, allowing precise maneuverability in every direction. Explore underwater environments with ease and agility."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Modular Expandability:"
+        description="Designed with a modular frame, our ROV allows for easy customization and expandability. Adapt the system to meet your specific exploration needs and integrate additional sensors or equipment seamlessly."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Intuitive Controller Software:"
+        description="Our integrated controller software draws inspiration from industry-leading solutions like Ardusub, Ardupilot, and QGroundControl. Enjoy user-friendly interfaces and robust functionality for seamless operation."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Versatile Communication Options:"
+        description="Choose the communication method that suits your mission best. Whether it's Li-Fi for high-speed wireless tasks, UART for versatile connectivity, or Ethernet for extended reach and high data transfer rate, our ROV offers flexible communication solutions."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Object Mapping and Identification:"
+        description="Choose the communication method that suits your mission best. Whether it's Li-Fi for high-speed wireless tasks, UART for versatile connectivity, or Ethernet for extended reach and high data transfer rate, our ROV offers flexible communication solutions."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Streamlined Design:"
         description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
          <ProductComponent imageSrc="/i1.png"
         title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-    <ProductComponent1 imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-         <ProductComponent imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-    <ProductComponent1 imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-         <ProductComponent imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-    <ProductComponent1 imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-         <ProductComponent imageSrc="/i1.png"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
-    <ProductComponent1 imageSrc="image1.jpg"
-        title="Blue Dress v2"
-        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+        description="Our ROV's streamlined frame minimizes drag, ensuring optimal maneuverability and efficiency. Glide through the water with grace and precision."/>
+   <p  className='features text-black flex justify-center items-center'> 
+   Unleash the potential of underwater exploration with our state-of-the-art ROV, setting new standards for versatility, performance, and imaging quality in the world beneath the surface. Explore, discover, and document the mysteries of the deep with confidence.
+   </p>
     </div>
 
 
-        {/* <Footer/> */}
+    
         
     
    

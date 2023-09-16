@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@headlessui/react": "^1.7.16",
-    "@heroicons/react": "^2.0.18",
+    "@heroicons/react": "^1.0.6",
     "@supabase/auth-helpers-nextjs": "^0.6.1",
     "@supabase/supabase-js": "^2.21.0",
     "apexcharts": "^3.42.0",

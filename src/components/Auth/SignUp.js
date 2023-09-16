@@ -33,7 +33,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="card">
+    <div className="card form-container">
       {/* <h2 className="w-full text-center">Create Account</h2> */}
       <Formik
         initialValues={{
@@ -44,7 +44,7 @@ const SignUp = () => {
         onSubmit={signUp}
       >
         {({ errors, touched }) => (
-          <Form className="column w-full">
+          <Form className="column w-full ">
             <label htmlFor="email">Email</label>
             <Field
               className={cn('input', errors.email && 'bg-red-50')}
@@ -76,13 +76,7 @@ const SignUp = () => {
       </Formik>
       {errorMsg && <div className="text-red-600">{errorMsg}</div>}
       {successMsg && <div className="text-black">{successMsg}</div>}
-      <button
-        className="link w-full"
-        type="button"
-        onClick={() => setView(VIEWS.SIGN_IN)}
-      >
-        Already have an account? Sign In.
-      </button>
+      
     </div>
   );
 };

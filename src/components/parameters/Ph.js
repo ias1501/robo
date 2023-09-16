@@ -113,7 +113,7 @@ const ph = () => {
                 </p>
 
                 <div className="d-flex align-items-center flex-row">
-                  <i className="fas fa-cloud fa-3x">
+                  <i >
                     1.IS 10500-2012 Acceptable limits:6.5-8.5
                     <br />
                     permissible:No relaxation

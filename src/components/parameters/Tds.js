@@ -114,7 +114,7 @@ const tds = () => {
               </p>
 
               <div className="d-flex align-items-center flex-row">
-                <i className="fas fa-cloud fa-3x">
+                <i >
                   1.IS 10500-2012
                   <br />
                   Acceptable limit:500 mg/I permissible:2000mg/l

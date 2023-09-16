@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 // import NavBar from '@/components/components/Navbar';
+// import Footer from '@/components/components/Footer';
 const Contact = () => {
     const formVariants = {
         hidden: { opacity: 0, x: -20 },
@@ -12,10 +13,10 @@ const Contact = () => {
         visible: { opacity: 1, x: 0, transition: { delay: 0.4, duration: 0.5 } },
       };
   return (
-    <div className="min-h-screen flex flex-col ">
+    <div className="min-h-screen flex flex-col bg-dashboard bg-no-repeat bg-cover   ">
       {/* <NavBar /> */}
       
-    <div className="flex-1 flex items-center justify-center bg-sea4 bg-no-repeat bg-cover  ">
+    <div className="flex-1 flex items-center justify-center">
     <motion.div
       className="bg-white p-8 rounded-lg shadow-lg backdrop-blur-md backdrop-filter bg-opacity-30 w-full sm:w-96 md:w-4/5 lg:w-3/5 flex flex-col md:flex-row"
       variants={formVariants}
@@ -66,6 +67,8 @@ const Contact = () => {
       </div>
     </motion.div>
     </div>
+    
+   
     </div>
   );
 };

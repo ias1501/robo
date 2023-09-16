@@ -32,7 +32,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 const rotateY = plugin(function ({ addUtilities }) {
-  addUtilities ({
+  addUtilities({
     '.rotate-y-180': {
       transform: "rotateY(180deg)"
     },
@@ -59,21 +59,21 @@ module.exports = {
         signup:
           'url("https://media.istockphoto.com/id/1152237432/photo/underwater-scene-tropical-seabed-with-reef-and-sunshine.jpg?s=612x612&w=0&k=20&c=qAe3eZ_bwmrq6CW5IoddV2icSDKsO7vkbQKwqy3ma0o=")',
         dashboard:
-          'url("https://c4.wallpaperflare.com/wallpaper/533/274/437/water-4k-best-high-resolution-wallpaper-preview.jpg")',
+          'url("/main.png")',
         contactus:
-          'url("https://img.freepik.com/premium-vector/girl-turns-support-service-customer-service-conceptcontact-usonline-helpline_369728-26.jpg")',
+          'url("/contactuss.png")',
         sea4: 'url("https://images.unsplash.com/photo-1499452535738-b35ed31e39d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxODYxOTg4fHxlbnwwfHx8fHw%3D&w=1000&q=80")',
         Lifi: 'url("https://media.istockphoto.com/id/1585551839/photo/li-fi-w-lan-internet-and-network-technology-enable-high-speed-li-fi-connections.webp?b=1&s=170667a&w=0&k=20&c=ValsNHHKcdyHykU_q6g0f0dVFqoS0nZFutlC8k8Hhsw=")',
         rov1: 'url("/assets/rov1.jpg")',
-        rov2:'url("https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN1Ym1hcmluZXMlMjBzbWFsbCUyMHVuZGVyd2F0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60")',
-        rov3:'url("https://media.istockphoto.com/id/1499815056/photo/a-tourist-submarine-has-gone-missing-in-the-north-atlantic-mini-manned-submarine-to-explore.webp?b=1&s=170667a&w=0&k=20&c=aOFE0Ib9CQFwbmg47D3nwbfgnxwY3nHqvHl7wrH0NPE=")',
+        rov2: 'url("https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN1Ym1hcmluZXMlMjBzbWFsbCUyMHVuZGVyd2F0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60")',
+        rov3: 'url("https://media.istockphoto.com/id/1499815056/photo/a-tourist-submarine-has-gone-missing-in-the-north-atlantic-mini-manned-submarine-to-explore.webp?b=1&s=170667a&w=0&k=20&c=aOFE0Ib9CQFwbmg47D3nwbfgnxwY3nHqvHl7wrH0NPE=")',
         cs: 'url("https://images.unsplash.com/photo-1581092162384-8987c1d64718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZWdyYXRlZCUyMGNvbnRyb2wlMjBzb2Z0d2FyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60")',
         ls: 'url("https://images.unsplash.com/photo-1439405326854-014607f694d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2ZSUyMHZlZGlvJTIwc3RyZWFtaW5nJTIwb2YlMjB3YXRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60")',
         dm: 'url("/i1.png")',
-        dl:'url("/dm.png")',
-        galery:'url("https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHdhdGVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")',
+        dl: 'url("/dm.png")',
+        galery: 'url("https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHdhdGVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")',
       },
-      
+
       colors: {
         "color-primary": "#01051e",
         "color-primary-light": "#020726",

@@ -114,7 +114,7 @@ const turb = () => {
                 </p>
 
                 <div className="d-flex align-items-center flex-row">
-                  <i className="fas fa-cloud fa-3x">
+                  <i >
                     1.IS 10500:2010
                     <br />
                     Acceptable unit:1 NTU Permissible limits:5 NTU

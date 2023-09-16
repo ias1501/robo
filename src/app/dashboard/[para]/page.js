@@ -50,7 +50,7 @@ const page = ({ params }) => {
     <div className="flex-row lg:flex">
       <Sidebar />
       <div className="container mx-auto mt-4 lg:mt-12 ">
-        <div className="p-4 mx-2 shadow-sm">
+        <div className="p-4 mx-2 shadow-sm ">
           {content} 
         </div>
       </div>

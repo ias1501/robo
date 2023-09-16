@@ -28,6 +28,7 @@ import React from 'react';
 import "./dashboard.css";
 import Sidebar from '@/components/sidebar';
 import { redirect } from 'next/navigation';
+// import Part from './p';
 // import Linechart from '@/components/parameters/Linechart';
 
 
@@ -134,40 +135,60 @@ const Dashboard = async(params) => {
   // if(params.ph){
   //   <Ph />
   // }
+ 
   return (
-    <div className="flex-row lg:flex">
-      <Sidebar />
-      <div className="container mx-auto mt-4 lg:mt-12">
-  <div className="p-4 mx-2 shadow-sm">
-    <h1 className="text-3xl font-semibold text-center mb-4 text-gray-800">
-    <h1 className="mb-6 text-3xl font-bold sm:text-5xl md:text-6xl">
-                Wander<span className="font-black text-blue-400">Sub</span>
-              </h1> Analytics
-    </h1>
-    <p className="text-gray-600 text-lg">
-      Here you can access all the analytics data of the ROV. In the sidebar,
-      you can navigate to specific sections.
-    </p>
-    <ul className="list-disc pl-6 mt-2 text-gray-600 text-lg">
-      <li>
-        <strong className="text-black">All Records:</strong> View real-time
-        records of sensor readings and battery values.
-      </li>
-      <li>
-        <strong className="text-black">Individual Parameters:</strong> Explore
-        specific parameters, including sensor value tables, graphs, and
-        suggestions.
-      </li>
-      <li>
-        <strong className="text-black">Mapping:</strong> Visualize the
-        accelerometer values of the WanderSub, along with a table of gyroscope
-        values.
-      </li>
-    </ul>
+    <div className="bg-dashboard bg-cover bg-no-repeat min-h-screen flex flex-row items-center justify-center ">
+  
+  <Sidebar />
+
+  <div className="flex-grow">
+    <div className="container mx-auto px-4 lg:px-12 py-8 lg:py-12">
+      <div className="text-center">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-200 mb-4">Analytics</h1>
+        <p className="text-gray-200 text-lg mb-4">
+          Here you can access all the analytics data of the ROV. In the sidebar, you can navigate to specific sections.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"> 
+       
+        <div className=" p-4  rounded-lg shadow-md" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+          <h2 className="text-xl font-semibold text-gray-200 mb-2">All Records</h2>
+          <p className="text-gray-200">
+            View real-time records of sensor readings and battery values.
+          </p>
+        </div>
+        
+        <div className=" p-4  rounded-lg shadow-md" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+          <h2 className="text-xl font-semibold text-gray-200 mb-2">Individual Parameters</h2>
+          <p className="text-gray-200">
+            Explore specific parameters, including sensor value tables, graphs, and suggestions.
+          </p>
+        </div>
+        
+ 
+        <div className=" p-4  rounded-lg shadow-md" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+          <h2 className="text-xl font-semibold text-gray-200 mb-2">Mapping</h2>
+          <p className="text-gray-200">
+            Visualize the accelerometer values of the WanderSub, along with a table of gyroscope values.
+          </p>
+        </div>
+        
+        <div className=" p-4  rounded-lg shadow-md" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+          <h2 className="text-xl font-semibold text-gray-200 mb-2">Statistics</h2>
+          <p className="text-gray-200">
+            Visualize statistics related to the ROV's performance and data.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-    </div>
   );
 }
  

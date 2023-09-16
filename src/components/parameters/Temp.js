@@ -113,7 +113,7 @@ const Temp = () => {
                 </p>
 
                 <div className="d-flex align-items-center flex-row">
-                  <i className="fas fa-cloud fa-3x" />
+                  <i  />
                 </div>
               </div>
             </div>

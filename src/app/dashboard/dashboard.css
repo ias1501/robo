@@ -1,121 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+/* Dashboard.css */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.dashboard-container {
+  text-align: center;
+  padding: 20px;
 }
 
-a {
-  color: #000;
-  text-decoration: none;
+.table-container {
+  position: relative;
+  overflow: auto;
+  background: whitesmoke;
+
+
 }
 
-body {
-  font-family: "Roboto", sans-serif;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.sidebar {
-  width: 4rem;
-  height: 100vh;
-  position: fixed;
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Vertical and horizontal lines */
+.lines-container {
+  position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 100;
-  cursor: pointer;
-  background: #5459e7;
-  transition: 0.5s;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-.sidebar:hover {
-  width: 12rem;
+.vertical-line,
+.horizontal-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.brand {
-  text-align: center;
-  font-size: 1.4rem;
-  padding: 1rem 0;
-  color: #000;
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.brand:hover {
-  background:white;
+.horizontal-line {
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Dashboard.css */
+
+/* ... (existing styles) */
+
+.animated-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+animation: ripple 10s linear infinite;
+background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.8) 100%);
 }
 
-.brand span {
-  display: none;
+@keyframes ripple {
+0% {
+  transform: scale(1);
+  opacity: 0.4;
+}
+50% {
+  transform: scale(3);
+  opacity: 0.1;
+}
+100% {
+  transform: scale(1);
+  opacity: 0.4;
+}
 }
 
-.nav-list {
-  list-style: none;
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.nav-item {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-item:hover {
-  background:white;
-}
-
-.nav-item a {
-  position: relative;
-  white-space: nowrap;
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-item__icon {
-  position: relative;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-
-}
-
-.nav-item__text {
-  position: relative;
-  display: none;
-  font-size: 1em;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.avatar {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8em;
-  font-weight: 700;
-}
-
-.logout {
-  margin-left: 0.2rem;
-}
-
-.sidebar:hover .brand span {
-  display: inline;
-}
-
-.sidebar:hover .nav-item {
-  justify-content: start;
-}
-
-.sidebar:hover .nav-item__text {
-  display: flex;
-  align-items: center;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    min-width: 100%;
+  }
+  th, td {
+    white-space: nowrap;
+  }
+  .vertical-line, .horizontal-line {
+    display: none;
+  }
 }
