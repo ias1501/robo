@@ -128,17 +128,17 @@ const ph = () => {
           backdropfilter: "blur(17.019758224487305px)",
         }}>
             <thead>
-              <tr className="border rounded-xl border-rounded-xl">
-                <th className="px-4 py-2">Created_at</th>
-                <th className="px-4 py-2">pH</th>
-              </tr>
+            <tr className='rounded-xl'>
+              <th className="px-4 py-2 border-b border-r">Created_at</th>
+              <th className="px-4 py-2 border-b ">pH</th>
+            </tr>
             </thead>
             <tbody>
-              {RecopH.map((Record) => (
-                <tr key={Record.created_at} className="border">
-                  <th scope="row" className="px-4 py-2">{Record.created_at}</th>
-                  <td className="px-4 py-2">{Record.ph}</td>
-                </tr>
+              {RecopH.map((Record,index) => (
+                <tr key={Record.created_at} className="">
+                <td className={"px-4 py-2 border-r" + (index === (RecopH.length - 1) ? "" : " border-b")}>{Record.created_at}</td>
+                <td className={"px-4 py-2" + (index === (RecopH.length - 1) ? "" : " border-b")}>{Record.ph}</td>
+              </tr>
               ))}
             </tbody>
           </table>

@@ -90,13 +90,13 @@ const Sidebar = () => {
     {/* Divider Line */}
     <hr className="my-4 border-t border-gray-600" />
 
-    {/* User Avatar */}
+    {/* User Avatar
     <div className="mb-4">
   
       <div className="flex items-center justify-center">
         <img src={"/assets/Isha.jpg"} alt="User Avatar" className="w-16 h-16 rounded-full" />
       </div>
-    </div>
+    </div> */}
 
     {/* Logout Button */}
     <div className="mt-auto py-2 px-6 flex items-center justify-center rounded-full w-full ">

@@ -303,14 +303,14 @@ import ProductComponent from "@/components/productcomponent2";
 import ProductComponent1 from "@/components/productcomponent1";
 
 const features =[
-  {id:1,title:"High-Definition Live Imaging",desc:"Experience the depths like never before with a live HD camera and advanced lighting system, providing crystal-clear visuals for wired communication. Immerse yourself in the underwater world in real-time.",img:"Live.png"},
+  {id:1,title:"High-Definition Live Imaging",desc:"Experience the depths like never before with a live HD camera and advanced lighting system, providing crystal-clear visuals for wired communication. Immerse yourself in the underwater world in real-time.",img:"/Live.png"},
   {id:2,title:"Precision Control with 5 Degrees of Freedom",desc:"Our ROV boasts 5 Degrees of Freedom (5-DoF) through a vectored thruster configuration, allowing precise maneuverability in every direction. Explore underwater environments with ease and agility",img:"/Precision.png"},
-  {id:3,title:"Powerful Propulsion",desc:"Equipped with six high-performance 130W motors, each delivering 1.6 kg of thrust, our ROV ensures efficient propulsion and rapid response to your commands. Traverse currents and conquer underwater challenges effortlessly.",img:"/i1.png"},
+  {id:3,title:"Powerful Propulsion",desc:"Equipped with six high-performance 130W motors, each delivering 1.6 kg of thrust, our ROV ensures efficient propulsion and rapid response to your commands. Traverse currents and conquer underwater challenges effortlessly.",img:"/propulsion.png"},
   {id:4,title:"Modular Expandability",desc:"Designed with a modular frame, our ROV allows for easy customization and expandability. Adapt the system to meet your specific exploration needs and integrate additional sensors or equipment seamlessly.",img:"/i1.png"},
-  {id:5,title:"Intuitive Controller Software",desc:"Our integrated controller software draws inspiration from industry-leading solutions like Ardusub, Ardupilot, and QGroundControl. Enjoy user-friendly interfaces and robust functionality for seamless operation.",img:"/i1.png"},
+  {id:5,title:"Intuitive Controller Software",desc:"Our integrated controller software draws inspiration from industry-leading solutions like Ardusub, Ardupilot, and QGroundControl. Enjoy user-friendly interfaces and robust functionality for seamless operation.",img:"/CONTROLLER SOFTWARE.png"},
   {id:6,title:"Versatile Communication Options",desc:"Choose the communication method that suits your mission best. Whether it's Li-Fi for high-speed wireless tasks, UART for versatile connectivity, or Ethernet for extended reach and high data transfer rate, our ROV offers flexible communication solutions.",img:"/Versatile.png"},
-  {id:7,title:"Object Mapping and Identification",desc:"Utilize advanced sensors, including an IMU and depth sensor, along with a barcode scanner, to map and identify underwater objects accurately. Enhance your research, inspection, and exploration capabilities.",img:"/i1.png"},
-  {id:8,title:"Streamlined Design",desc:"Our ROV's streamlined frame minimizes drag, ensuring optimal maneuverability and efficiency. Glide through the water with grace and precision.",img:"/i1.png"}
+  {id:7,title:"Object Mapping and Identification",desc:"Utilize advanced sensors, including an IMU and depth sensor, along with a barcode scanner, to map and identify underwater objects accurately. Enhance your research, inspection, and exploration capabilities.",img:"obj mapping.png"},
+  {id:8,title:"Streamlined Design",desc:"Our ROV's streamlined frame minimizes drag, ensuring optimal maneuverability and efficiency. Glide through the water with grace and precision.",img:"/streamline2.png"}
 ]
 
 const Hero3 = () => {

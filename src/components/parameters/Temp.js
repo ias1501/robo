@@ -136,7 +136,7 @@ const Temp = () => {
             {RecoTemp.map((Record, index) => (
               <tr key={Record.created_at} className="">
                 <td className={"px-4 py-2 border-r" + (index === (RecoTemp.length - 1) ? "" : " border-b")}>{Record.created_at}</td>
-                <td className={"px-4 py-2" + (index === (RecoTemp.length - 1) ? "" : " border-b")}>{Record.turb}</td>
+                <td className={"px-4 py-2" + (index === (RecoTemp.length - 1) ? "" : " border-b")}>{Record.temp}</td>
               </tr>
             ))}
           </tbody>
