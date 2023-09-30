@@ -23,29 +23,13 @@ const SignInSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string().required("Required"),
 });
-const SignUpSchema = Yup.object().shape({
 
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().required('Required'),
-});
 const SignIn = () => {
   const { setView } = useAuth();
   const [errorMsg, setErrorMsg] = useState(null);
-  const [errorMsg1, setErrorMsg1] = useState(null);
-  const [successMsg, setSuccessMsg] = useState(null);
-
-  async function signUp(formData) {
-    const { error } = await supabase.auth.signUp({
-      email: formData.email,
-      password: formData.password,
-    });
-
-    if (error) {
-      setErrorMsg1(error.message);
-    } else {
-      setSuccessMsg('Success! Please check your email for further instructions.');
-    }
-  }
+  
+  const [isSignUp, setIsSignUp] = useState(false);
+  
   async function signIn(formData) {
     const { error } = await supabase.auth.signInWithPassword({
       email: formData.email,
@@ -56,40 +40,52 @@ const SignIn = () => {
       setErrorMsg(error.message);
     }
   }
-  useEffect(() => {
-    const signUpButton = document.getElementById("signUp");
-    const signInButton = document.getElementById("signIn");
-    const container = document.getElementById("container");
+  // useEffect(() => {
+  //   const signUpButton = document.getElementById("signUp");
+  //   const signInButton = document.getElementById("signIn");
+  //   const container = document.getElementById("container");
 
-    signUpButton.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
-    });
+  //   signUpButton.addEventListener("click", () => {
+  //     container.classList.add("right-panel-active");
+  //   });
 
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
-    });
+  //   signInButton.addEventListener('click', () => {
+  //     container.classList.remove("right-panel-active");
+  //   });
 
-    // Cleanup event listeners when the component unmounts
-    return () => {
-      signUpButton.removeEventListener("click", () => {
-        container.classList.add("right-panel-active");
-      });
+  //   // Cleanup event listeners when the component unmounts
+  //   return () => {
+  //     signUpButton.removeEventListener("click", () => {
+  //       container.classList.add("right-panel-active");
+  //     });
 
-      signInButton.removeEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-      });
-    };
-  }, []);
+  //     signInButton.removeEventListener('click', () => {
+  //       container.classList.remove("right-panel-active");
+  //     });
+  //   };
+  // }, []);
 
   return (
-    <div>
-      
-      <div className="container" id="container">
-        <div className="form-container sign-up-container">
-        <SignUp />
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 font-montserrat text-black bg-dashboard" >
+    <div className="max-w-md w-full" >
+      <div className="bg-white p-8 rounded-lg shadow-md" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+
+}}>
+        <div className="text-center">
+          {isSignUp ? (
+            <>
+              <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+              <p className="text-black">Create an account to get started.</p>
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl font-semibold mb-4">Sign In</h2>
+              <p className="text-black-600">Welcome back! Please sign in.</p>
+            </>
+          )}
         </div>
-        <div className="form-container sign-in-container">
-        <Formik
+
+       {isSignUp ? <SignUp/>: <Formik
                     initialValues={{
                       email: "",
                       password: "",
@@ -98,11 +94,11 @@ const SignIn = () => {
                     onSubmit={signIn}
                   >
                     {({ errors, touched }) => (
-                      <Form className="w-full p-4">
+                      <Form className="w-full p-4 ">
                         <div className="mb-6">
                           <label
                             htmlFor="email"
-                            className="mb-2 block rounded text-sm font-bold text-gray-700"
+                            className="mb-2 block rounded text-sm font-bold text-black"
                           >
                             Email
                           </label>
@@ -126,7 +122,7 @@ const SignIn = () => {
                         <div className="mb-6">
                           <label
                             htmlFor="password"
-                            className="mb-2 block rounded text-sm font-bold text-gray-700"
+                            className="mb-2 block rounded text-sm font-bold text-black"
                           >
                             Password
                           </label>
@@ -146,7 +142,7 @@ const SignIn = () => {
                           ) : null}
                         </div>
 
-                        <div className="mb-6 flex items-center text-sm text-gray-700">
+                        <div className="mb-6 flex items-center text-sm text-black-700">
                           <input
                             type="checkbox"
                             name="Remember"
@@ -172,27 +168,25 @@ const SignIn = () => {
                         </button>
                       </Form>
                     )}
-                  </Formik>
-        </div>
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>To keep connected with us, please login with your personal info</p>
-              <button className="ghost" id="signIn">Sign In</button>
-            </div>
-            <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start the journey with us</p>
-              <button className="ghost" id="signUp">Sign Up</button>
-            </div>
-          </div>
+                  </Formik>}
+
+        <div className="mt-6 text-center">
+          <p className="text-black-600">
+            {isSignUp
+              ? "Already have an account?"
+              : "Don't have an account?"}
+            <span
+              className="ml-2 text-blue-300 cursor-pointer"
+              onClick={() => setIsSignUp(!isSignUp)}
+            >
+              {isSignUp ? "Sign In" : "Sign Up"}
+            </span>
+          </p>
         </div>
       </div>
-
-      
     </div>
-  );
+  </div>
+);
 };
 
 export default SignIn;

@@ -12,7 +12,16 @@
 
 
 }
+.card2{
+  width: 166.45px;
+height: 92.29px;
+top: 136px;
+left: 426px;
+padding: 19.78px, 89.67px, 19.44px, 19.78px;
+border-radius: 13.18px;
+background-color: rgba(108, 107, 107, 0.78);
 
+}
 table {
   border-collapse: collapse;
   width: 100%;

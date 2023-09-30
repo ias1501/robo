@@ -8,7 +8,10 @@ body {
 	height:50vh;
 	background:#ddd;
 }
-
+.viscard{
+	height:188;
+	width:343;
+}
 
 .headline {
 	
@@ -101,4 +104,7 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 .rov1{
 	background-image: url("/assets/rov1.jpg");
+}
+.Pv{
+    justify-content:center;
 }

@@ -49,6 +49,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        "wendy-one":['Wendy One', 'sans-serif'],
+        "montserrat":['Montserrat','sans-serif']
+      },
       backgroundImage: {
         // 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         // 'gradient-conic':

@@ -47,42 +47,50 @@ const RovStats = () => {
 
   return (
 
-<div className="container mx-auto p-4">
+<div className="card mx-auto  rounded-lg shadow-lg font-montserrat text-color-white" 
+style={{
+  background:
+    "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
+}}>
 
 
 
 
 
-    <div className="p-4">
-        <table className="table-auto w-full">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">Created_at</th>
-              <th className="px-4 py-2" colSpan={3}>Accelerometer</th>
-              <th className="px-4 py-2" colSpan={3}>Gyroscope</th>
+    <div className="p-4 rounded-lg"  style={{
+                background: "rgba(71, 71, 71, 0.25)",
+                backdropfilter: "blur(17.019758224487305px)",
+               
+              }} >
+        <table className="table-auto w-full " >
+          <thead className='border' >
+            <tr  className='border'>
+              <th scope="col" className="px-4 py-2">Created_at</th>
+              <th scope="col" className="px-4 py-2" colSpan={3}>Accelerometer</th>
+              <th scope="col" className="px-4 py-2" colSpan={3}>Gyroscope</th>
             </tr>
-            <tr>
+            <tr className='border'>
             <th className="px-6 py-3"></th>
 
-            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acc_x</th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acc_y</th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acc_z</th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">gyro_roll</th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">gyro_pitch</th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">gyro_yarn</th>
+            <th scope="col" className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider">Acc_x</th>
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider">Acc_y</th>
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider">Acc_z</th>
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider">gyro_roll</th>
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider">gyro_pitch</th>
+                    <th scope="col" className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider">gyro_yarn</th>
   
             </tr>
           </thead>
           <tbody>
             {RecoStat.map((Record) => (
-              <tr key={Record.created_at} className="odd:bg-gray-100">
-                <td className="px-4 py-2">{Record.created_at}</td>
-                <td className="px-4 py-2">{Record.Acc_x}</td>
-                <td className="px-4 py-2">{Record.Acc_y}</td>
-                <td className="px-4 py-2">{Record.Acc_z}</td>
-                <td className="px-4 py-2">{Record.gyro_roll}</td>
-                <td className="px-4 py-2">{Record.gyro_pitch}</td>
-                <td className="px-4 py-2">{Record.gyro_yarn}</td>
+              <tr key={Record.created_at} className="text-center border">
+                <td scope="row" className="px-4 py-2">{Record.created_at}</td>
+                <td scope="row"  className="px-4 py-2">{Record.Acc_x}</td>
+                <td scope="row" className="px-4 py-2">{Record.Acc_y}</td>
+                <td scope="row" className="px-4 py-2">{Record.Acc_z}</td>
+                <td scope="row" className="px-4 py-2">{Record.gyro_roll}</td>
+                <td scope="row" className="px-4 py-2">{Record.gyro_pitch}</td>
+                <td  scope="row" className="px-4 py-2">{Record.gyro_yarn}</td>
               </tr>
             ))}
           </tbody>

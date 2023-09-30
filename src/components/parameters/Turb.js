@@ -47,20 +47,53 @@ const turb = () => {
 
   useEffect(() => {
     if (Recoturb.length > 0) {
-      const ctx = document.getElementById('myChart').getContext('2d');
+      const ctx = document.getElementById("myChart").getContext("2d");
       const myChart = new Chart(ctx, {
-        type: 'line',
+        type: "line",
         data: {
           labels: Recoturb.map((record) => record.created_at),
           datasets: [
             {
               data: Recoturb.map((record) => record.turb),
-              label: 'Turbidity',
-              borderColor: '#3e95cd',
-              backgroundColor: '#7bb6dd',
+              label: "Turbidity",
+              borderColor: "orange",
+              backgroundColor: "#ffc04d",
+              color: "#36A2EB",
               fill: false,
             },
           ],
+          
+        },
+        options: {
+          scales: {
+            x: {
+              ticks: {
+                color: "white", // Change the font color of x-axis ticks
+              },
+              title: {
+                display: true,
+                text: "Time",
+                color: "white", // Change the font color of x-axis title
+              },
+            },
+            y: {
+              ticks: {
+                color: "white", // Change the font color of y-axis ticks
+              },
+              title: {
+                display: true,
+                text: "Values",
+                color: "white", // Change the font color of y-axis title
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: "white", // Change the font color of legend labels
+              },
+            },
+          },
         },
       });
       return () => {
@@ -74,28 +107,37 @@ const turb = () => {
 
   return (
 
-    <div className="container mx-auto p-4">
-    <div className="bg-white shadow-lg rounded-lg">
+    <div className="container mx-auto p-4 rounded-lg font-montserrat justify-center">
+    <div className="p-4 shadow-lg rounded-lg" style={{
+      background:
+        "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
+    }}>
     <div className="graph">
         <div className="my-8">
           <div className="mx-auto max-w-screen-md">
-            <div className="shadow-xl rounded-xl border border-gray-400">
+            <div className="shadow-xl rounded-xl border border-gray-400" style={{
+                background: "rgba(71, 71, 71, 0.25)",
+                backdropfilter: "blur(17.019758224487305px)",
+              }}>
               <canvas id="myChart" />
             </div>
           </div>
         </div>
       </div>
       <div className="p-4">
-        <table className="table-auto w-full">
+      <table className="table w-full table-auto text-left text-sm  text-gray-200 font-montserrat " style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}>
           <thead>
-            <tr>
+            <tr className='border rounded-xl border-rounded-xl'>
               <th className="px-4 py-2">Created_at</th>
               <th className="px-4 py-2">Turbidity</th>
             </tr>
           </thead>
           <tbody>
             {Recoturb.map((Record) => (
-              <tr key={Record.created_at} className="odd:bg-gray-100">
+              <tr key={Record.created_at} className="border">
                 <td className="px-4 py-2">{Record.created_at}</td>
                 <td className="px-4 py-2">{Record.turb}</td>
               </tr>
@@ -103,10 +145,19 @@ const turb = () => {
           </tbody>
         </table>
       </div>
-      <h2 className="mt-4 text-3xl">Records having greater than 5 NTU Turbidity</h2>
-      <div className="align-items-right container">
-            <div className="card shadow-0 border">
-              <div className="card-body p-4">
+      
+      <div className="card font-montserrat text-color-white" style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}>
+        <h2 className="mt-4 text-3xl  font-montserrat text-color-white" >Records having greater than 5 NTU Turbidity</h2>
+
+        <div className="align-items-right container  mt-4">
+          <div className="card shadow-0 border" style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}>
+            <div className="card-body p-4">
                 <h4 className="sfw-normal mb-1">Turbidity range</h4>
 
                 <p>
@@ -124,8 +175,9 @@ const turb = () => {
                   </i>
                 </div>
               </div>
-            </div>
           </div>
+        </div>
+        </div>
     </div>
   </div>
   )

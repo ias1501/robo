@@ -33,7 +33,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="card form-container">
+    <div className=" form-container font-mon">
       {/* <h2 className="w-full text-center">Create Account</h2> */}
       <Formik
         initialValues={{
@@ -44,10 +44,14 @@ const SignUp = () => {
         onSubmit={signUp}
       >
         {({ errors, touched }) => (
-          <Form className="column w-full ">
-            <label htmlFor="email">Email</label>
+          <Form className=" w-full p-4 ">
+            <div className='mb-6'>
+            <label htmlFor="email" className='className="mb-2 block rounded text-sm font-bold text-gray-700"'>Email</label>
             <Field
-              className={cn('input', errors.email && 'bg-red-50')}
+             className={cn(
+              "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight focus:outline-none",
+              errors.email && touched.email && "bg-red-50"
+            )}
               id="email"
               name="email"
               placeholder="jane@acme.com"
@@ -56,10 +60,14 @@ const SignUp = () => {
             {errors.email && touched.email ? (
               <div className="text-red-600">{errors.email}</div>
             ) : null}
-
-            <label htmlFor="email">Password</label>
+            </div>
+            <div className="mb-6">
+            <label htmlFor="email" className="mb-2 block rounded text-sm font-bold text-gray-700">Password</label>
             <Field
-              className={cn('input', errors.password && touched.password && 'bg-red-50')}
+             className={cn(
+              "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight focus:outline-none",
+              errors.email && touched.email && "bg-red-50"
+            )}
               id="password"
               name="password"
               type="password"
@@ -67,10 +75,13 @@ const SignUp = () => {
             {errors.password && touched.password ? (
               <div className="text-red-600">{errors.password}</div>
             ) : null}
-
-            <button className="button-inverse w-full" type="submit">
-              Submit
-            </button>
+</div>
+<button
+                          className="w-full rounded-full bg-blue-500 px-6 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-blue-700"
+                          type="submit" 
+                        >
+                          Submit
+                        </button>
           </Form>
         )}
       </Formik>

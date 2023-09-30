@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import supabase from "@/lib/supabase-browser";
 
 function Reletpos() {
-  const [xPosition, setXPosition] = useState("");
-  const [yPosition, setYPosition] = useState("");
-  const [markerPositions, setMarkerPositions] = useState([]); // Use an array to store multiple marker positions
+  const [markerPositions, setMarkerPositions] = useState([]);
   const [showMarkerPopup, setShowMarkerPopup] = useState(false);
+  const [selectedMarker, setSelectedMarker] = useState(null); // Track the selected marker
   const canvasSize = { width: 400, height: 400 };
   const canvasRef = useRef(null);
 
@@ -15,25 +14,20 @@ function Reletpos() {
         const { data, error } = await supabase
           .from("positional_para")
           .select("Acc_x, Acc_y")
-          .order("created_at", { ascending: true }); // Change to ascending to get all values
+          .order("created_at", { ascending: true });
 
         if (error) {
           throw error;
         }
 
-        const values = data; // An array of all x and y values
+        const values = data;
 
-        // Create an array of marker positions from the values
         const markers = values.map((value) => ({
           x: value.Acc_x,
           y: value.Acc_y,
         }));
 
-        // Update the marker positions state
         setMarkerPositions(markers);
-
-        // Update X and Y positions to the latest value
-        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -60,7 +54,6 @@ function Reletpos() {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Check if the click is within any marker's boundaries
     const clickedMarker = markerPositions.find(
       (marker) =>
         x >= marker.x - 10 &&
@@ -69,20 +62,17 @@ function Reletpos() {
         y <= marker.y + 10
     );
 
-    // Show the marker popup if clicking on a marker
     if (clickedMarker) {
       setShowMarkerPopup(true);
+      setSelectedMarker(clickedMarker);
     } else {
-      // Hide the marker popup if clicking outside any marker
       setShowMarkerPopup(false);
     }
   };
 
   const drawCanvas = (ctx) => {
-    // Clear the canvas
     ctx.clearRect(0, 0, canvasSize.width, canvasSize.height);
 
-    // Draw grid lines
     ctx.strokeStyle = "#ccc";
     for (let x = 0; x <= canvasSize.width; x += 20) {
       ctx.beginPath();
@@ -97,7 +87,6 @@ function Reletpos() {
       ctx.stroke();
     }
 
-    // Draw X and Y axes
     ctx.strokeStyle = "#000";
     ctx.beginPath();
     ctx.moveTo(0, canvasSize.height / 2);
@@ -106,10 +95,9 @@ function Reletpos() {
     ctx.lineTo(canvasSize.width / 2, canvasSize.height);
     ctx.stroke();
 
-    // Plot all marker positions
     if (markerPositions.length > 0) {
       ctx.fillStyle = "red";
-      const markerRadius = 5; // Radius of the circular marker
+      const markerRadius = 5;
       markerPositions.forEach((marker) => {
         ctx.beginPath();
         ctx.arc(marker.x, marker.y, markerRadius, 0, Math.PI * 2);
@@ -125,31 +113,37 @@ function Reletpos() {
   }, [markerPositions]);
 
   return (
-    <div className="card">
-      <h1 className="text-2xl font-semibold mb-4">IoT Device Position</h1>
-      <div className="w-1/2 bg-sky-50 shadow-md p-4 rounded-lg relative">
-        <div className="relative h-96">
+    <div className="card text-color-white" style={{
+      background:
+        "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
+    }}
+    >
+      <h1 className="mb-4 text-2xl font-semibold">IoT Device Position</h1>
+      <div className="relative w-1/2 rounded-lg bg-sky-50 p-4 shadow-md"  style={{
+                background: "rgba(71, 71, 71, 0.25)",
+                backdropfilter: "blur(17.019758224487305px)",
+               
+              }}>
+        <div className="relative  h-96" >
           <canvas
             ref={canvasRef}
-            className="absolute top-0 left-0 cursor-pointer"
+            className="absolute left-0 top-0 cursor-pointer"
             width={canvasSize.width}
             height={canvasSize.height}
             onClick={handleCanvasClick}
           ></canvas>
-          {showMarkerPopup && markerPositions.length > 0 && (
+          {showMarkerPopup && selectedMarker && (
             <div
-              className="absolute bg-white p-2 rounded shadow-md"
+              className="absolute p-2 shadow-md"
               style={{
-                top: markerPositions[0].y + 20, // Adjust the position
-                left: markerPositions[0].x + 10, // Adjust the position
+                background: "rgba(71, 71, 71, 0.25)",
+                backdropFilter: "blur(17.019758224487305px)",
+                top: selectedMarker.y + 20,
+                left: selectedMarker.x + 10,
               }}
             >
-              {markerPositions.map((marker, index) => (
-                <div key={index}>
-                  <p>X: {marker.x.toFixed(2)}</p>
-                  <p>Y: {marker.y.toFixed(2)}</p>
-                </div>
-              ))}
+              <p>X: {selectedMarker.x.toFixed(2)}</p>
+              <p>Y: {selectedMarker.y.toFixed(2)}</p>
             </div>
           )}
         </div>

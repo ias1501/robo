@@ -9,10 +9,7 @@ export default async function Profile() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const user1 = {
-    email: 'user@example.com',
-    lastSignIn: '2023-09-14T12:00:00Z', // Replace with the actual last sign-in date
-  };
+ 
 
   return (
     <div className='bg-dashboard bg-cover text-white'>
@@ -29,15 +26,15 @@ export default async function Profile() {
           <div className="mt-6">
           <strong>Email:</strong>
             <div className="border p-2 rounded-md mb-2 w-34">
-              <p className="text-gray-200">{user1.email}</p>
+              <p className="text-gray-200">{user.email}</p>
             </div>
             <strong>Last Signed In:</strong>
             <div className="border p-2 rounded-md mb-2 w-33">
-              <p className="text-gray-200">{new Date(user1.lastSignIn).toLocaleString()}</p>
+              <p className="text-gray-200">{new Date().toLocaleString()}</p>
             </div>
           </div>
       <div className="mt-6 flex justify-between">
-      <Link href="\"><button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-red-600">Go Home</button>
+      <Link href="\"><button className="bg-blue-500 text-white py-2 px-4 rounded-3xl hover:bg-blue-600">Go Home</button>
       </Link>{/* <button className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"></button> */}
             <SignOut />
           </div>

@@ -47,20 +47,53 @@ const tds = () => {
   
   useEffect(() => {
     if (Recotds.length > 0) {
-      const ctx = document.getElementById('myChart').getContext('2d');
+      const ctx = document.getElementById("myChart").getContext("2d");
       const myChart = new Chart(ctx, {
-        type: 'line',
+        type: "line",
         data: {
           labels: Recotds.map((record) => record.created_at),
           datasets: [
             {
               data: Recotds.map((record) => record.tds),
-              label: 'TDS',
-              borderColor: '#3e95cd',
-              backgroundColor: '#7bb6dd',
+              label: "TDS",
+              borderColor: "Red",
+              backgroundColor: "#d78f89",
+              color: "#36A2EB",
               fill: false,
             },
           ],
+          
+        },
+        options: {
+          scales: {
+            x: {
+              ticks: {
+                color: "white", // Change the font color of x-axis ticks
+              },
+              title: {
+                display: true,
+                text: "Time",
+                color: "white", // Change the font color of x-axis title
+              },
+            },
+            y: {
+              ticks: {
+                color: "white", // Change the font color of y-axis ticks
+              },
+              title: {
+                display: true,
+                text: "Values",
+                color: "white", // Change the font color of y-axis title
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: "white", // Change the font color of legend labels
+              },
+            },
+          },
         },
       });
       return () => {
@@ -71,31 +104,39 @@ const tds = () => {
       };
     }
   }, [Recotds]);
-
   return (
 
-    <div className="container mx-auto p-4">
-    <div className="bg-white shadow-lg rounded-lg">
+    <div className="container mx-auto p-4 rounded-lg font-montserrat" >
+    <div className="p-4 shadow-lg rounded-lg" style={{
+      background:
+        "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
+    }}>
     <div className="graph">
         <div className="my-8">
           <div className="mx-auto max-w-screen-md">
-            <div className="shadow-xl rounded-xl border border-gray-400">
+            <div className="shadow-xl rounded-xl border border-gray-400"  style={{
+                background: "rgba(71, 71, 71, 0.25)",
+                backdropfilter: "blur(17.019758224487305px)",
+              }}>
               <canvas id="myChart" />
             </div>
           </div>
         </div>
       </div>
       <div className="p-4">
-        <table className="table-auto w-full">
+      <table className="table w-full table-auto text-left text-sm  text-gray-200 font-montserrat " style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}>
           <thead>
-            <tr>
+            <tr className='border rounded-xl border-rounded-xl'>
               <th className="px-4 py-2">Created_at</th>
               <th className="px-4 py-2">TDS</th>
             </tr>
           </thead>
           <tbody>
             {Recotds.map((Record) => (
-              <tr key={Record.created_at} className="odd:bg-gray-100">
+              <tr key={Record.created_at} className="border">
                 <td className="px-4 py-2">{Record.created_at}</td>
                 <td className="px-4 py-2">{Record.tds}</td>
               </tr>
@@ -103,27 +144,38 @@ const tds = () => {
           </tbody>
         </table>
       </div>
-      <h2 className="mt-4 text-3xl">Records having greater than 2000 mg/l TDS</h2>
-      <div className="container mx-auto flex h-fit w-fit items-center justify-center">
-          <div className="card shadow-0 border">
+      
+      <div className="card font-montserrat text-color-white" style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}>
+        <h2 className="mt-4 text-3xl  font-montserrat text-color-white">Records having greater than 2000 mg/l TDS</h2>
+
+        <div className="align-items-right container  mt-4">
+          <div className="card shadow-0 border" style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}>
             <div className="card-body p-4">
-              <h4 className="sfw-normal mb-1">TDS range</h4>
+              <h3 className="sfw-normal mb-1 text-xl">pH Range</h3>
 
               <p>
-                Max: <strong>2000 mg/l</strong>, Min: <strong>5000 mg/l</strong>
+                Max: <strong>8.5</strong>, Min: <strong>6.5</strong>
               </p>
 
               <div className="d-flex align-items-center flex-row">
-                <i >
-                  1.IS 10500-2012
+                <i>
+                  1.IS 10500-2012 Acceptable limits:6.5-8.5
                   <br />
-                  Acceptable limit:500 mg/I permissible:2000mg/l
+                  permissible:No relaxation
                   <br />
-                  2.Suggestions:Reverse osmosis Distillation deionization by Ion Exchange
+                  2.Suggestions:Increase pH by soda ash Decrease pH by white
+                  vinegar/citric acid
                 </i>
               </div>
             </div>
           </div>
+        </div>
         </div>
     </div>
   </div>
