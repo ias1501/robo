@@ -99,7 +99,7 @@ const Sidebar = () => {
     </div>
 
     {/* Logout Button */}
-    <div className="mt-auto py-2 px-6 ml-8 rounded-full w-full ">
+    <div className="mt-auto py-2 px-6 flex items-center justify-center rounded-full w-full ">
     
         <SignOut />
     

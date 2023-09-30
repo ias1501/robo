@@ -341,7 +341,7 @@ const Hero3 = () => {
       <div className="flex flex-col justify-center items-center bg-gray-100 font-montserrat text-black">
         <div className="flex flex-col w-full items-center p-8 pb-0  ">
         
-          <h2 className="text-3xl font-bold text-center p-4 pb-3 ">Vission</h2>
+          <h2 className="text-3xl font-bold text-center p-4 pb-3 ">Vision</h2>
           <div className="self-center">
           <p className="max-w-2xl text-black text-center  text-xl">
             "To unlock the mysteries of the world beneath the waves and empower
@@ -536,7 +536,7 @@ const Hero3 = () => {
               <img
                 src={feature.img}
                 alt={feature.title}
-                className="mx-auto md:mx-0  rounded-lg"
+                className="mx-auto md:mx-0 rounded-3xl"
               />
             </div>
             <div className={`w-1/2 md:w-2/3 lg:w-1/2 w-full lg:pl-10 lg:pr-10 lg:py-6 mt-6 lg:mt-0  ${index % 2 === 1 ? 'text-right' : 'text-left'} mx-auto md:mx-0`}>

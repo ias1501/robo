@@ -62,9 +62,9 @@ style={{
                 backdropfilter: "blur(17.019758224487305px)",
                
               }} >
-        <table className="table-auto w-full " >
-          <thead className='border' >
-            <tr  className='border'>
+        <table className="table-auto w-full rounded-t-2xl" >
+          <thead className='border rounded-t-2xl'>
+            <tr  className='border rounded-t-2xl'>
               <th scope="col" className="px-4 py-2">Created_at</th>
               <th scope="col" className="px-4 py-2" colSpan={3}>Accelerometer</th>
               <th scope="col" className="px-4 py-2" colSpan={3}>Gyroscope</th>
@@ -82,8 +82,8 @@ style={{
             </tr>
           </thead>
           <tbody>
-            {RecoStat.map((Record) => (
-              <tr key={Record.created_at} className="text-center border">
+            {RecoStat.map((Record, index) => (
+              <tr key={Record.created_at} className={"text-center border" + (index === RecoStat.length - 1 ? " rounded-b-2xl" : "")}>
                 <td scope="row" className="px-4 py-2">{Record.created_at}</td>
                 <td scope="row"  className="px-4 py-2">{Record.Acc_x}</td>
                 <td scope="row" className="px-4 py-2">{Record.Acc_y}</td>

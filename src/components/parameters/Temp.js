@@ -121,22 +121,22 @@ const Temp = () => {
           </div>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-row items-center justify-center w-full">
       <table className="table w-full table-auto text-left text-sm  text-gray-200 font-montserrat " style={{
           background: "rgba(71, 71, 71, 0.25)",
           backdropfilter: "blur(17.019758224487305px)",
         }}>
           <thead>
-            <tr className='border rounded-xl border-rounded-xl'>
-              <th className="px-4 py-2">Created_at</th>
-              <th className="px-4 py-2">Temperature</th>
+            <tr className='rounded-xl'>
+              <th className="px-4 py-2 border-b border-r">Created_at</th>
+              <th className="px-4 py-2 border-b ">Temperature</th>
             </tr>
           </thead>
           <tbody>
-            {RecoTemp.map((Record) => (
-              <tr key={Record.created_at} className="border">
-                <td className="px-4 py-2">{Record.created_at}</td>
-                <td className="px-4 py-2">{Record.turb}</td>
+            {RecoTemp.map((Record, index) => (
+              <tr key={Record.created_at} className="">
+                <td className={"px-4 py-2 border-r" + (index === (RecoTemp.length - 1) ? "" : " border-b")}>{Record.created_at}</td>
+                <td className={"px-4 py-2" + (index === (RecoTemp.length - 1) ? "" : " border-b")}>{Record.turb}</td>
               </tr>
             ))}
           </tbody>

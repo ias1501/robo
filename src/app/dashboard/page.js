@@ -134,18 +134,19 @@ const Dashboard = async (params) => {
   // }
 
   return (
-    <div className="flex min-h-screen flex-row items-center justify-center bg-dashboard bg-cover bg-no-repeat ">
+    <div className="relative flex min-h-screen w-full flex-row justify-between bg-dashboard bg-cover bg-no-repeat ">
       <Sidebar />
+      <div className="flex flex-row grow m-10 items-center justify-center ">
+        <div
+          className="card flex grow self-start"
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
+          }}
+        >
 
-      <div
-        className="card m-10 flex-grow self-start"
-        style={{
-          background:
-            "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
-        }}
-      >
-        
-        <Alreco />
+          <Alreco />
+        </div>
       </div>
     </div>
   );

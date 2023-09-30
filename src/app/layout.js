@@ -21,16 +21,16 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
-  <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      />
-</head>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
       <body>
         {/* <HeroSection /> */}
         <>
@@ -45,17 +45,15 @@ export default async function RootLayout({ children }) {
         </div> */}
           <main>
             <AuthProvider accessToken={accessToken}>
-            <div className="flex flex-col min-h-screen">
-      <Navbar className="fixed top-0 left-0 w-full z-10" /> {/* Add fixed class */}
-      {/* <Navbar className="fixed top-0 left-0 w-full z-10" />  */}
-      <div > {/* Adjust the top margin */}
-        {children}
-        </div>
-      </div>
+              <div className="flex flex-col min-h-screen">
+                <Navbar className="fixed top-0 left-0 w-full z-10" /> {/* Add fixed class */}
+                {/* <Navbar className="fixed top-0 left-0 w-full z-10" />  */}
+                {children}
+              </div>
               <Footer />
             </AuthProvider>
           </main>
-          
+
         </>
       </body>
     </html>
