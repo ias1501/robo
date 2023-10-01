@@ -1,74 +1,65 @@
-"use client"
-import React from 'react';
-import { motion } from 'framer-motion';
-// import NavBar from '@/components/components/Navbar';
-// import Footer from '@/components/components/Footer';
-const Contact = () => {
-    const formVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.5 } },
-      };
-      const inputVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0, transition: { delay: 0.4, duration: 0.5 } },
-      };
-  return (
-    <div className="min-h-screen flex flex-col bg-dashboard bg-no-repeat bg-cover   ">
-      {/* <NavBar /> */}
-      
-    <div className="flex-1 flex items-center justify-center">
-    <motion.div
-      className="bg-white p-8 rounded-lg shadow-lg backdrop-blur-md backdrop-filter bg-opacity-30 w-full sm:w-96 md:w-4/5 lg:w-3/5 flex flex-col md:flex-row"
-      variants={formVariants}
-      initial="hidden"
-      animate="visible"
-    >
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 
-      <div className="md:w-1/2 pr-8">
-        
-        <form>
-          <motion.div className="mb-4"  variants={inputVariants} >
-            <label className="block text-sm font-medium mb-1">Name</label>
-            <input
-              type="text"
-              className="w-full px-3 py-2 bg-gray-200 bg-opacity-60 border rounded-lg focus:outline-none focus:border-blue-500"
-              placeholder="Your Name"
-            />
-            </motion.div>
-          
-          <motion.div className="mb-4" variants={inputVariants}>
-          <label className="block text-sm font-medium mb-1">Email</label>
-          <input
-            type="email"
-            className="w-full px-3 py-2 bg-gray-200 bg-opacity-60 border rounded-lg focus:outline-none focus:border-blue-500"
-            placeholder="you@example.com"
-          />
+const Contact = () => {
+  const formVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.5 } },
+  };
+  const inputVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { delay: 0.4, duration: 0.5 } },
+  };
+  return (
+    <div className="flex min-h-screen flex-col bg-dashboard bg-cover bg-no-repeat   ">
+      <div className="flex flex-1 items-center justify-center">
+        <motion.div
+          className="flex w-full flex-col rounded-lg bg-white bg-opacity-30 p-8 shadow-lg backdrop-blur-md backdrop-filter sm:w-96 md:w-4/5 md:flex-row lg:w-3/5"
+          variants={formVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="pr-8 md:w-1/2">
+            <form>
+              <motion.div className="mb-4" variants={inputVariants}>
+                <label className="mb-1 block text-sm font-medium">Name</label>
+                <input
+                  type="text"
+                  className="w-full rounded-lg border bg-gray-200 bg-opacity-60 px-3 py-2 focus:border-blue-500 focus:outline-none"
+                  placeholder="Your Name"
+                />
+              </motion.div>
+
+              <motion.div className="mb-4" variants={inputVariants}>
+                <label className="mb-1 block text-sm font-medium">Email</label>
+                <input
+                  type="email"
+                  className="w-full rounded-lg border bg-gray-200 bg-opacity-60 px-3 py-2 focus:border-blue-500 focus:outline-none"
+                  placeholder="you@example.com"
+                />
+              </motion.div>
+              <motion.div className="mb-4" variants={inputVariants}>
+                <label className="mb-1 block text-sm font-medium">
+                  Message
+                </label>
+                <textarea
+                  className="h-32 w-full resize-none rounded-lg border bg-gray-200 bg-opacity-60 px-3 py-2 focus:border-blue-500 focus:outline-none"
+                  placeholder="Your message..."
+                />
+              </motion.div>
+              {/* Other form input fields */}
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-300 hover:bg-blue-600"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div className="bg-contactus bg-cover bg-no-repeat md:w-1/2"></div>
         </motion.div>
-          <motion.div className="mb-4" variants={inputVariants}>
-          <label className="block text-sm font-medium mb-1">Message</label>
-          <textarea
-            className="w-full px-3 py-2 bg-gray-200 bg-opacity-60 border rounded-lg resize-none h-32 focus:outline-none focus:border-blue-500"
-            placeholder="Your message..."
-          />
-        </motion.div>
-          {/* Other form input fields */}
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 w-full"
-          >
-            Send Message
-          </button>
-        </form>
       </div>
-      <div className="md:w-1/2 bg-contactus bg-cover bg-no-repeat">
-        {/* Add your image or text content */}
-        {/* Example: */}
-       
-      </div>
-    </motion.div>
-    </div>
-    
-   
     </div>
   );
 };

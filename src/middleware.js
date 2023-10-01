@@ -1,5 +1,5 @@
-import { createMiddlewareSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { NextResponse } from 'next/server';
+import { createMiddlewareSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { NextResponse } from "next/server";
 
 /**
  * Any Server Component route that uses a Supabase client must be added to this
@@ -19,7 +19,6 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ['/profile'],
+  matcher: ["/profile"],
   // matcher:['/auth/signin']
-  
 };

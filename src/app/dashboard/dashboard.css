@@ -9,18 +9,15 @@
   position: relative;
   overflow: auto;
   background: whitesmoke;
-
-
 }
-.card2{
+.card2 {
   width: 166.45px;
-height: 92.29px;
-top: 136px;
-left: 426px;
-padding: 19.78px, 89.67px, 19.44px, 19.78px;
-border-radius: 13.18px;
-background-color: rgba(108, 107, 107, 0.78);
-
+  height: 92.29px;
+  top: 136px;
+  left: 426px;
+  padding: 19.78px, 89.67px, 19.44px, 19.78px;
+  border-radius: 13.18px;
+  background-color: rgba(108, 107, 107, 0.78);
 }
 table {
   border-collapse: collapse;
@@ -28,7 +25,8 @@ table {
   margin-bottom: 20px;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   border: 1px solid #ccc;
 }
@@ -67,31 +65,35 @@ th, td {
 /* ... (existing styles) */
 
 .animated-background {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-animation: ripple 10s linear infinite;
-background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.8) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: ripple 10s linear infinite;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 70%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
 }
 
 @keyframes ripple {
-0% {
-  transform: scale(1);
-  opacity: 0.4;
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
 }
-50% {
-  transform: scale(3);
-  opacity: 0.1;
-}
-100% {
-  transform: scale(1);
-  opacity: 0.4;
-}
-}
-
 
 /* Animation */
 @keyframes fadeIn {
@@ -111,10 +113,12 @@ background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(2
   table {
     min-width: 100%;
   }
-  th, td {
+  th,
+  td {
     white-space: nowrap;
   }
-  .vertical-line, .horizontal-line {
+  .vertical-line,
+  .horizontal-line {
     display: none;
   }
 }

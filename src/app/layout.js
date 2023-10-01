@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/herosection";
 import { AuthProvider } from "src/components/AuthProvider";
 import createClient from "src/lib/supabase-server";
 
@@ -21,7 +20,6 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
         <link
           rel="stylesheet"
@@ -32,28 +30,18 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body>
-        {/* <HeroSection /> */}
         <>
-          {/* <div className="flex min-h-screen flex-col items-center justify-center py-2">
-          <main className="flex w-full flex-1 shrink-0 flex-col items-center justify-center px-8 text-center sm:px-20">
-            
-            <h1 className="mb-12 text-5xl font-bold sm:text-6xl">
-              Next.js with <span className="font-black text-green-400">Supabase</span>
-            </h1>
-            
-          </main>
-        </div> */}
           <main>
             <AuthProvider accessToken={accessToken}>
-              <div className="flex flex-col min-h-screen">
-                <Navbar className="fixed top-0 left-0 w-full z-10" /> {/* Add fixed class */}
+              <div className="flex min-h-screen flex-col">
+                <Navbar className="fixed left-0 top-0 z-10 w-full" />{" "}
+                {/* Add fixed class */}
                 {/* <Navbar className="fixed top-0 left-0 w-full z-10" />  */}
                 {children}
               </div>
               <Footer />
             </AuthProvider>
           </main>
-
         </>
       </body>
     </html>

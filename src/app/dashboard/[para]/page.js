@@ -1,49 +1,41 @@
 "use client";
-import { useParams, useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+
+import React from "react";
 import Ph from "@/components/parameters/Ph";
 import Temp from "@/components/parameters/Temp";
 import Turb from "@/components/parameters/Turb";
 import Alreco from "@/components/parameters/Alreco";
-import Rovstats from "@/components/parameters/rovstats";
 import Tds from "@/components/parameters/Tds";
 import Sidebar from "@/components/sidebar";
-import Reletpos from "@/components/parameters/reletpos";
+import RovStats from "@/components/parameters/rovstats";
+import Reletpos from "@/components/parameters/Reletpos";
 
-// const tabs = ["ph","tds"];
 const page = ({ params }) => {
-  // const router = useRouter();
-  // const { page } = router.query;
-  let content = "";
-  if (params.para === "ph") {
-    content = <Ph />;
-  } else if (params.para === "tds") {
-    content = <Tds />;
-  } else if (params.para === "temp") {
-    content = <Temp />;
-  } else if (params.para === "turb") {
-    content = <Turb />;
-  } else if (params.para === "alreco") {
-    content = <Alreco />;
-  } else if (params.para === "rovstats") {
-    content = <Rovstats />;
-  } else if (params.para === "reletpos") {
-    content = <Reletpos />;
+  let content;
+
+  switch (params.para) {
+    case "ph":
+      content = <Ph />;
+      break;
+    case "tds":
+      content = <Tds />;
+      break;
+    case "temp":
+      content = <Temp />;
+      break;
+    case "turb":
+      content = <Turb />;
+      break;
+    case "rovstats":
+      content = <RovStats />;
+      break;
+    case "reletpos":
+      content = <Reletpos />;
+      break;
+    default:
+      content = <Alreco />; // Handle the default case if needed
   }
-  // const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  // const displaytabContent =()=>{
-
-  //   switch(activeTab) {
-  //     case "ph":
-  //       return(
-  //         <div>ph</div>
-  //       )
-  //     default:
-  //       return null;
-  //   }
-  // };
   console.log(params.para);
   return (
     <div className="relative flex-row bg-dashboard lg:flex">

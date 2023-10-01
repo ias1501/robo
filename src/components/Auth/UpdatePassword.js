@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import cn from 'classnames';
-import { Field, Form, Formik } from 'formik';
-import * as Yup from 'yup';
+import { useState } from "react";
+import cn from "classnames";
+import { Field, Form, Formik } from "formik";
+import * as Yup from "yup";
 
-import supabase from 'src/lib/supabase-browser';
+import supabase from "src/lib/supabase-browser";
 
 const UpdatePasswordSchema = Yup.object().shape({
-  password: Yup.string().required('Required'),
+  password: Yup.string().required("Required"),
 });
 
 const UpdatePassword = () => {
@@ -29,7 +29,7 @@ const UpdatePassword = () => {
       <h2 className="w-full text-center">Update Password</h2>
       <Formik
         initialValues={{
-          password: '',
+          password: "",
         }}
         validationSchema={UpdatePasswordSchema}
         onSubmit={updatePassword}
@@ -38,7 +38,10 @@ const UpdatePassword = () => {
           <Form className="column w-full">
             <label htmlFor="email">New Password</label>
             <Field
-              className={cn('input', errors.password && touched.password && 'bg-red-50')}
+              className={cn(
+                "input",
+                errors.password && touched.password && "bg-red-50"
+              )}
               id="password"
               name="password"
               type="password"

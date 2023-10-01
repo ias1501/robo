@@ -1,8 +1,8 @@
-import SignIn from '@/components/Auth/SignIn'
-import Link from 'next/link'
-import { redirect } from 'next/navigation';
-import React from 'react'
-import createClient from 'src/lib/supabase-server';
+import SignIn from "@/components/Auth/SignIn";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import React from "react";
+import createClient from "src/lib/supabase-server";
 
 const page = async () => {
   const supabase = createClient();
@@ -12,17 +12,13 @@ const page = async () => {
   } = await supabase.auth.getUser();
 
   if (user) {
-    redirect('/');
+    redirect("/");
   }
   return (
     <div>
-      <SignIn/>
-    
-    {/* <Link className="button" href="/profile">
-          Go to Profile
-        </Link> */}
+      <SignIn />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

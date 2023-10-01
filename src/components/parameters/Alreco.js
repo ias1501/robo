@@ -167,7 +167,7 @@ const Alreco = () => {
               >
                 <div className="pl-4">
                   <h2 className="text-top text-xl font-semibold text-gray-200 ">
-                  Temperature
+                    Temperature
                   </h2>
                   <h3 className="self-end text-lg text-color-white ">
                     {record.temp} K
@@ -230,14 +230,13 @@ const Alreco = () => {
         <div className="my-8 ">
           <div className="mx-auto  max-w-screen-lg max-w-screen-md">
             <div
-              className="relative w-full card rounded-xl border border-gray-400 shadow-xl "
+              className="card relative w-full rounded-xl border border-gray-400 shadow-xl "
               style={{
                 background: "rgba(71, 71, 71, 0.25)",
                 backdropfilter: "blur(17.019758224487305px)",
-               
               }}
             >
-              <canvas id="myChart"  />
+              <canvas id="myChart" />
             </div>
           </div>
         </div>

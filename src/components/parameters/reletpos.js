@@ -113,18 +113,22 @@ function Reletpos() {
   }, [markerPositions]);
 
   return (
-    <div className="card text-color-white" style={{
-      background:
-        "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
-    }}
+    <div
+      className="card text-color-white"
+      style={{
+        background:
+          "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
+      }}
     >
-      <h1 className="mb-4 text-2xl font-semibold">IoT Device Position</h1>
-      <div className="relative w-1/2 rounded-lg bg-sky-50 p-4 shadow-md"  style={{
-                background: "rgba(71, 71, 71, 0.25)",
-                backdropfilter: "blur(17.019758224487305px)",
-               
-              }}>
-        <div className="relative  h-96" >
+      <h1 className="mb-4 text-2xl font-semibold">Rov Reletive Position</h1>
+      <div
+        className="relative w-1/2 rounded-lg bg-sky-50 p-4 shadow-md"
+        style={{
+          background: "rgba(71, 71, 71, 0.25)",
+          backdropfilter: "blur(17.019758224487305px)",
+        }}
+      >
+        <div className="relative  h-96">
           <canvas
             ref={canvasRef}
             className="absolute left-0 top-0 cursor-pointer"
