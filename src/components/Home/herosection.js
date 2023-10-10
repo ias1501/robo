@@ -20,7 +20,7 @@ const features = [
     id: 3,
     title: "Powerful Propulsion",
     desc: "Equipped with six high-performance 130W motors, each delivering 1.6 kg of thrust, our ROV ensures efficient propulsion and rapid response to your commands. Traverse currents and conquer underwater challenges effortlessly.",
-    img: "/propulsion.png",
+    img: "/pp1.png",
   },
   {
     id: 4,
@@ -92,7 +92,7 @@ const Hero3 = () => {
           <h2 className="mt-2 p-4 pb-0 text-center text-3xl font-bold ">
             Mission
           </h2>
-          <div className="grid grid-cols-2 gap-3 p-8 pt-6 md:grid-cols-3 lg:grid-cols-4 ">
+          <div className="grid  gap-3 p-8 pt-6 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 ">
             <div
               className=" rounded-lg  p-4 shadow-md"
               style={{

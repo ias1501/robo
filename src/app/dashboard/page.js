@@ -2,7 +2,7 @@ import createClient from "src/lib/supabase-server";
 
 import React from "react";
 import "./dashboard.css";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar/sidebar";
 import { redirect } from "next/navigation";
 import Alreco from "@/components/parameters/Alreco";
 

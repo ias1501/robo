@@ -2,9 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../../public/Group 1.png";
-import { useAuth } from "./AuthProvider";
-import SignOut from "./SignOut";
+import logo from "../../../public/Group 1.png";
+import { useAuth } from "../AuthProvider";
+import SignOut from "../SignOut";
 import "./nav.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 function NavBar() {

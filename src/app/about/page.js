@@ -1,22 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
-import TeamMemberCard from "@/components/TeamMemberCard";
-import NavBar from "@/components/Navbar";
+// import TeamMemberCard from "@/components/TeamMemberCard";
+// import NavBar from "@/components/Navbar/Navbar";
 // import Footer from '@/components/components/Footer';
 
-const teamMembers = [
-  { name: "Isha Shah", role: "CEO", imageSrc: "assets/Isha.jpg" },
-  { name: "Sayandeeep Nayak", role: "CEO", imageSrc: "assets/image 2.png" },
-  {
-    name: "Dev Jhamtani",
-    role: "CEO",
-    imageSrc: "assets/IMG-20230201-WA0000.jpg",
-  },
-  { name: "Isha Shah", role: "CEO", imageSrc: "assets/Isha.jpg" },
-  { name: "Isha Shah", role: "CEO", imageSrc: "assets/Isha.jpg" },
-  // Add more team members here
-];
+
 
 const About = () => {
   return (
@@ -60,33 +49,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Member Cards
-      <section classNameName=" flex-grow py-16 ">
-      <h2 classNameName="text-3xl md:text-4xl font-bold mb-8 flex justify-center items-center">Meet Our Team</h2>
-      <p classNameName="text-2xl md:text-4xl font-semibold mb-8 flex justify-center items-center">The members who worked hard to bring this project to life.</p>
-      <div classNameName="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 xl:px-20 ">
-          
-      <div classNameName="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8">
-        <div classNameName="md:col-span-3 flex justify-center items-center ">
-          <div classNameName="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            {teamMembers.slice(0, 2).map((member, index) => (
-              <TeamMemberCard key={index} name={member.name} role={member.role} imageSrc={member.imageSrc} />
-            ))}
-          </div>
-        </div>
-        <div classNameName="md:col-span-5 flex justify-center items-center ">
-          <TeamMemberCard name={teamMembers[2].name} role={teamMembers[2].role} imageSrc={teamMembers[2].imageSrc} />
-        </div>
-        <div classNameName="md:col-span-3 flex justify-center items-center">
-          <div classNameName="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            {teamMembers.slice(3).map((member, index) => (
-              <TeamMemberCard key={index} name={member.name} role={member.role} imageSrc={member.imageSrc} />
-            ))}
-          </div>
-        </div>
-      </div>
-      </div>
-      </section> */}
+      
       <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-6 lg:py-16">
           <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">
@@ -274,7 +237,7 @@ const About = () => {
               <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-200 ">
                 <a href="#">Dev jhamtani</a>
               </h3>
-              <p>Back-end Developer</p>
+              <p>Full-Stack Developer</p>
               <ul className="mt-4 flex justify-center space-x-4">
                 <li>
                   <a

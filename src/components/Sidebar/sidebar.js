@@ -1,19 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import {
-  HomeIcon,
-  CogIcon,
-  TemplateIcon,
-  TranslateIcon,
-  BadgeCheckIcon,
-} from "@heroicons/react/solid";
+import { HomeIcon, TemplateIcon, DatabaseIcon } from "@heroicons/react/solid";
 
 // Import your company logo
 
-// Import a sample user avatar (replace with your actual user avatar)
-import Isha from "../../public/assets/Isha.jpg";
-import SignOut from "./SignOut";
+// Import a sample user avatar (replace with your actual user avata
+import SignOut from "../SignOut";
 import Link from "next/link";
+import {
+  FaMapMarked,
+  FaMapMarkedAlt,
+  FaMapMarker,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const Sidebar = () => {
   // Use state to manage the sub-sections' visibility
@@ -64,7 +63,7 @@ const Sidebar = () => {
             }`}
             onClick={toggleSubsections}
           >
-            <CogIcon className="mr-2 h-5 w-5" />
+            <DatabaseIcon className="mr-2 h-5 w-5" />
             All Records
           </a>
 
@@ -120,8 +119,8 @@ const Sidebar = () => {
             href="/dashboard/reletpos"
             className="flex items-center text-gray-200 hover:text-blue-600"
           >
-            <BadgeCheckIcon className="mr-2 h-5 w-5" />
-            Relative Positioning
+            <FaMapMarkerAlt className="mr-2 h-5 w-5" />
+            Object Mapping
           </a>
         </li>
       </ul>

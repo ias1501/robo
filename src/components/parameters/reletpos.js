@@ -120,7 +120,7 @@ function Reletpos() {
           "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
       }}
     >
-      <h1 className="mb-4 text-2xl font-semibold">Rov Reletive Position</h1>
+      <h1 className="mb-4 text-2xl font-semibold">Relative Position of ROV</h1>
       <div
         className="relative w-1/2 rounded-lg bg-sky-50 p-4 shadow-md"
         style={{

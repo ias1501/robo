@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/herosection";
+import HeroSection from "@/components/Home/herosection";
 
 import Auth from "src/components/Auth";
 import { useAuth, VIEWS } from "src/components/AuthProvider";

@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import { AuthProvider } from "src/components/AuthProvider";
 import createClient from "src/lib/supabase-server";
 
@@ -28,6 +28,7 @@ export default async function RootLayout({ children }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <title>WanderSub</title>
       </head>
       <body>
         <>

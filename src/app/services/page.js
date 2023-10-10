@@ -1,5 +1,5 @@
 "use client";
-import CarouselComponent from "@/components/ServicesCarousel";
+import CarouselComponent from "@/components/Services/ServicesCarousel";
 
 const ServicesPage = () => {
   return (
