@@ -44,7 +44,7 @@ const features = [
     id: 7,
     title: "Object Mapping and Identification",
     desc: "Utilize advanced sensors, including an IMU and depth sensor, along with a barcode scanner, to map and identify underwater objects accurately. Enhance your research, inspection, and exploration capabilities.",
-    img: "obj mapping.png",
+    img: "/obj_mapping.png",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ const Hero3 = () => {
                     WanderSub is a state-of-the-art underwater remotely operated
                     vehicle (ROV)
                   </p>
-                  <button className="btn">Explore Now</button>
+                  <button className="btn" href='/auth/signin'>Explore Now</button>
                 </div>
                 <div className="mb-12 text-center md:w-1/2 md:pr-10 md:text-left"></div>
               </div>

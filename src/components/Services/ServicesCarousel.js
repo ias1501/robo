@@ -2,8 +2,8 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import pic1 from "../../public/floattest.jpg";
-import pic2 from "../../public/assets/logo.jpg";
+// import pic1 from "../../../public/floattest.jpg";
+import pic2 from "../../../public/assets/logo.jpg";
 const slides = [
   {
     title: "WanderSub",

@@ -46,6 +46,7 @@ module.exports = {
       padding: {
         DEFAULT: "20px",
         md: "50px",
+        
       },
     },
   },
